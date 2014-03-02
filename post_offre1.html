@@ -1,0 +1,315 @@
+<!-- BEGIN: MAIN -->
+<html   {RIGHT_LEFT_ENTRY} >
+<head>
+<meta http-equiv='Content-Type' content='text/html; {CHARSET}' />
+<link rel='stylesheet' href='css/style.css' type='text/css'>
+<title>{POST_OFFRE1}</title>
+
+</head>
+<script language="JavaScript" src="ajax.js" type="text/javascript"></script>
+<script language="JavaScript" src="saisir.js" type="text/javascript"></script>
+<script language="JavaScript" src="saisir_offre.js" type="text/javascript"> </script>
+<script language="JavaScript" src="norm_string.js" type="text/javascript"></script>
+<script language="JavaScript" src="post_offre1.js" type="text/javascript"> </script>
+<script language="JavaScript" src="post_offre1b.js" type="text/javascript"> </script>
+<script language="JavaScript" >
+var select_enable_la ='{SELECT_ENABLE_LA_UTIL}';
+var enable_la ='{enable_la}';
+var voffer_to_veri ='{OFFER_TO_VERIFY}';
+var voffer_modi_to_veri = '{OFFER_MODIFIED_TO_VERIFY}';
+var voffer_non_approu= '{OFFER_NON_APPROUVED}';
+var voffer_non_app_modi= '{OFFER_NON_APP_MODI}';
+var voffer_is_ban = '{OFFER_NON_APPROUVED_ALL}';
+var vgps='{GPS}';
+var lb_auto_trans= '{LB_AUTO_TRANS}';
+var v_message_v1 ="{SAIS_ENT_INFO_FIRST}";
+var want_continue="{WANT_CONTINUE}";
+var q_auto_trans ="{Q_AUTO_TRANS}";
+var index_la='{PRE_LANGUE}';
+var vhi= '{G_HI}';
+var lb_sign_out = '{SIGN_OUT}';	
+var lb_not_post_company ='{NOT_POST_COMPANY_INFO}';
+var nlangue={LANGUE_PRE};
+var id_u ='{id_u}';
+
+function init_form() {  
+	f=document.frm;  
+	d1 =document.getElementById('uphoto');
+	var i= d1.style.top;
+	d2 =document.getElementById('browse_photo');
+	d2.top =i;
+	f_list_la_offre();
+	{init_form}
+	setTimeout("lable_ini()",50);
+	setTimeout("sync0()",50);
+}
+</script>
+
+<body  onLoad="init_form();">
+<div id="wrapper" class="offre">  
+ {(header1p)} 
+   <table width="1010" cellpadding="0" cellspacing="0">
+     <tr>
+
+       <td colspan="4" height="20" id="breadcrumbs"><a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a> &raquo;<a href="my_account.php">{MY_ACCOUNT}</a> &raquo;{POST_OFFRE1} </td>
+     </tr>
+     <tr>
+       <td colspan="4"  height="54"><span class="text_1f1d" style="color:#3989C9; font-size:22px"> <b>{POST_OFFRE1}</b></span></td>
+     </tr>
+     <tr>
+       <td height="41" colspan="4" class="text_1b3b"><p>
+               <br>
+         <b>(<span class="text_1a2r red_s">*</span>) {G_REQUI_FIEL} </b></p>
+           <p  class="line_submit">
+             <input name="post2" class="blue_btn"  type="button"   onClick="if(check_form()){ document.frm.submit();}" value="{UPDATE}">
+            
+			 <input type="button"  class="blue_btn"   name="close" value="Close" onClick="close_w()">
+             <input name="reset2" type="button"  class="blue_btn" onClick="redo(); document.frm.submit();"  id="reset2"  value="{RESET}">
+             <span class="text_1b1x">
+             <input name="traduction2" type="button"  class="blue_btn blue_btn_l"   onClick="if(check_form()){r_tranlate(); document.frm.submit();}" value="{DTR}">
+             </span>
+             <i>{READY_LANGUE} </i>&nbsp;<span id="list_la_offre">{img_language_offre}</span></p></td>
+     </tr>
+     <form action="post_offre1.php" name="frm" method="post" >
+       <input type="hidden" name="reouvrir" value="{reouvrir}">
+       <input type="hidden" name="langue1" value="{langue1}">
+       <input type="hidden" name="langue2" value="{langue2}">
+       <input type="hidden" name="code1" value="{code1}">
+       <input type="hidden" name="h_cle_offre" value="">
+       <input type="hidden" name="h_cle_offre2" value="">
+       <input type="hidden" name="catego_select" value="{catego_select}">
+       <input type="hidden" name="id_offre" value="{id_offre}">
+	   <input type="hidden" name="t_offre" value="{t_offre}">
+       <input type="hidden" name="id_u" value="{id_u}">
+       <input type="hidden" name="dtradu" value="0">
+       <input type="hidden" name="nchar" value="0">
+       <input type="hidden" name="nmot" value="0">
+       <input type="hidden" name="titre2" value="0">
+       <input type="hidden" name="detail2" value="0">
+       <input type="hidden" name="tmembre" value="{tmembre}">
+       <tr>
+         <td height="223" colspan="4"><table cellpadding="5" cellspacing="0" width="1101">
+             <tr> </tr>
+             
+             <tr>
+                <td width="165" class="text_1a2r" id="label_titre">&nbsp;<span class="red_s">*</span>&nbsp;<span class="text_1a1b">{T_TITRE}</span></td>
+                  <td><input name="titre" type="text"  value="{titre}" size="40" style="width:353px" onChange="update2();"  {RIGHT_LEFT_ENTRY}></td>
+             </tr>
+             <tr>
+              <td class="text_1a2r" id="label_duree">&nbsp;<span class="red_s">*</span>&nbsp;<span class="text_1a1b">{T_DUREE}</span></td>
+              <td><select class="selection" style="width:355px" name="combo_duree" onChange="update2()">
+                 
+           {combo_duree}
+         
+                </select> &nbsp;<i>{FROM_NOW}</i> </td>
+             </tr>
+             <tr valign="middle">
+               <td class="text_1a2r" id="label_mot_cle">&nbsp;<span class="red_s">*</span>&nbsp;<span class="text_1a1b">{T_MOT_CLE}</span></td>
+               <td><table cellpadding="0" cellspacing="0" width="624">
+                   <tr>
+                     <td width="244"><input name="mot_cle" type="text" style="width:331px" size="40" onDblClick="SelectMotCle();update2();" {RIGHT_LEFT_ENTRY}>
+                      <i class="text_1b1x">{G_EXP_KEYW1}</i>
+                     </td>
+                     <td width="25" style="font-size:20px; line-height:17px; padding:0 2px 0 5px;">
+                      <span  class="text_1f1d" onClick="return SelectMotCle();update2();">&raquo;&nbsp;</span > <span  class="text_1f1d" onClick="return DeleteOptions(document.frm.combo_cle_offre,document.frm.combo_cle_offre.options[document.frm.combo_cle_offre.selectedIndex].value);update2();">&laquo; &nbsp;</span ></td>
+                     <td width="353"><span onDblClick="DeleteOptions(document.frm.combo_cle_offre,document.frm.combo_cle_offre.options[document.frm.combo_cle_offre.selectedIndex].value);update2();">{CLE_OFFRE}</span></td>
+                   </tr>
+               </table></td>
+             </tr>
+         </table></td>
+       </tr>
+       <tr>
+         <td colspan="4"><div  style="width:100%;clear:both; background:url(images/dotted.jpg) repeat-x 0 0; padding:10px">
+             <div style="width:200px;float:left" class="text_1a2r" id="label_categorie"> <span class="red_s">* </span><span class="text_1a1b" style="padding-left:0px;">{T_CATEGORIE}</span> </div>
+           <div style="width:580px;float:left"><span class="text_1b3b"><a href=""><span id="t_catego1" >&nbsp;{NOM_CATEGORIE1} </span></a>
+            <a href=""><span id="t_catego2">&nbsp; {NOM_CATEGORIE2}</span></a>
+            <a href=""><span id="t_catego3">&nbsp; {NOM_CATEGORIE3}</span></a>
+            <a href=""><span id="t_catego4">&nbsp; {NOM_CATEGORIE4}</span></a>
+            </span></div> <div class="clear"></div>
+         </div>
+            <div style="width:100%;clear:both; background:url(images/dotted.jpg) repeat-x 0 bottom; padding-bottom:15px; margin-bottom:10px">
+               <div style="float:left; width:225px" id="divcatego1" >
+                <select name="combo_categorie1" style=" width:215px " class="selection" onChange="change_categorie(this.value,'2','divcatego2');update2();" >
+                  
+         {combo_categorie1}
+        
+        
+                </select>
+              </div>
+               <div style="float:left; "  onMouseOver="aug_dim('2')"  id="divcatego2"  class="divcombo_categories">{combo_categorie2} </div>
+               <div style="float:left;"  onMouseOver="aug_dim('3')" id="divcatego3"  class="divcombo_categories">{combo_categorie3} </div>
+               <div style="float:left; "   id="divcatego4"  class="divcombo_categories">{combo_categorie4} </div>
+                <div class="clear"></div>
+             </div></td>
+       </tr>
+       <tr valign="top">
+         <td height="240" colspan="3"><table cellpadding="5" cellspacing="0" width="1010">
+             <tr valign="top">
+               <td width="165" height="131" id="label_detail"><span class="text_1a2r">&nbsp;*&nbsp;&nbsp;</span><span class="text_1a1b">{T_DETAIL}</span><br>
+                   <br>
+                 <br>
+               <p align="right" class="text_1b1b">{CHAR_COUNT}: <span id="num_detail">&nbsp;</span> </p></td>
+               <td width="" valign="bottom"><span class="text_1b1x">
+                 <textarea name="detail" cols="70" rows="7" id="detail"    onKeyPress="checkcontent(this.value.length,'detail')"  onChange="checkcontent(this.value.length,'detail');update2();"  {RIGHT_LEFT_ENTRY}>{detail}</textarea>
+                 <br>
+               {G_MAX} 500 {G_CHAR} </span></td>
+             </tr>
+            <tr valign="top">
+              <td style="padding-top:23px" height="100">&nbsp;&nbsp;{T_PHOTO}</td>
+              <td style="padding-top:23px"><div id="uphoto" >{C1} {U_PHOTO}</div></td>
+            </tr>
+         </table></td>
+       </tr>
+       <tr>
+         <td colspan="4" height="19">&nbsp;</td>
+       </tr>
+       <tr valign="middle">
+        <td colspan="3" height="36" style="background-color:#779BCA; color:#fff;font-size: 16px;font-weight: bold;"  class="text_1e1w">&nbsp;{G_MOR_INF}</td>
+       </tr>
+       <tr>
+         <td colspan="4" height="15">&nbsp;</td>
+       </tr>
+       <tr>
+         <td colspan="4"><table cellpadding="5" cellspacing="0" width="1010">
+             <tr>
+               <td width="165" valign="top"><p>{T_T_ACHE}</p></td>
+               <td width="">{radio_t_ache} <br></td>
+             </tr>
+             
+             <tr valign="top">
+               <td height="34" id="label_prix"><span class="text_1a1b"> {T_PRIX} </span></td>
+               <td><p>{FROM}&nbsp;
+                       <input name="prixc" type="text" value="{prixc}" size="22"   onChange="verif_n(this.value,'prixc')" >
+                 &nbsp; &nbsp;{TO}
+                 <input name="prixt" type="text" id="prixt" value="{prixt}" size="22">
+                 &nbsp;&nbsp;&nbsp; &nbsp;
+                 <select class="selection" name="combo_argent" style="width: 117px;" >
+                   
+          {combo_argent}
+
+                 </select>
+                 {FOR}
+                 <select class="selection" name="combo_unit_pv" style="width: 117px;" >
+                      
+	       {combo_unit_pv}
+
+                 </select>
+               </p></td>
+             </tr>
+             <tr valign="top">
+               <td id="label_vqc"><span class="text_1a1b">{T_VQC}</span></td>
+               <td><input name="vqc" type="text" value="{vqc}" size="22">
+                 &nbsp; &nbsp; &nbsp;
+                 <select class="selection" name="combo_unit_pvc" style="width:163px">
+                   
+	       {combo_unit_pvc}
+	         
+                 </select>               </td>
+             </tr>
+             <tr valign="top">
+               <td>{T_CERTIFI}<br>
+                   <br>
+                 <br>
+                   <p align="right" class="text_1b1b">{CHAR_COUNT}: <span class="style15" id="num_certifi">&nbsp;</span> </p></td>
+               <td><span class="text_1b1x">
+                 <textarea name="certifi" cols="60" rows="8"     onKeyPress="checkcontent(this.value.length,'certifi')" onChange="checkcontent(this.value.length,'certifi')" {RIGHT_LEFT_ENTRY}>{certifi}</textarea>
+                 <br>
+                 <i>{G_MAX} 500 {G_CHAR}</i> </span></td>
+             </tr>
+         </table></td>
+       </tr>
+       <tr>
+         <td colspan="4" height="20" style="background: url(images/dotted.jpg) repeat-x 0 10px; ">&nbsp;</td>
+       </tr>
+     </form>
+     <tr>
+       <td colspan="4" height="25" ><p><b>{T_FILE}</b>
+       <table height="151"   >
+              <tr>
+                <td width="173">&nbsp;</td>
+                <td  height="100" valign="top"><span class="text_1b1x">
+                  <p id="addition_message"  style="visibility:visible"> </p>
+                  <p style="color:#53879f; border-bottom:1px solid #ccc; padding-bottom:5px" id="list_f">{C1} {LIST_F}</p>
+                  <p> </p>
+                  <form action="ajax_upload_file_offre.{LANGUE_PRE}.php" name="fufile" target="upload_iframe_file" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="f_type" value="specifi" />
+                    <input type="hidden" name="id_offre_temp2" value="{id_offre_temp}">
+                    <input type="hidden" name="id_offre" value="{id_offreb}">
+                    <input type="hidden" name="langue1" value="{langue1b}">
+                    <input type="hidden" name="code1" value="{code1b}">
+                    <table cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top">
+                <td>{T_TITRE_FICHIER}
+                      <input name="titre_fichier" type="text" style="width:280px" value="" size="30"></td>
+                <td> <p style="margin:0 10px; vertical-align:top"><input name="radio_langue" id="radio_langue1" type="radio" value="0" checked="">
+                      {ALL_LANG}<br>
+                      <input name="radio_langue" id="radio_langue2" type="radio" value="{CODE_LANG}">
+                      {ONLY_LANG} {NOM_LANG}</p></td>
+                <td><input type="file" name="u_file" size="2px" onchange="check_file();update2();"><br>
+<i>  ({G_ATTA_FILE})</i>
+                </td>
+              </tr></tbody></table>
+                  </form>
+                  
+                  <p>
+                    <iframe name="upload_iframe_file" style="width: 400px; height: 200px;  display:none "></iframe>
+                    <iframe name="iframe_data" style="width: 400px; height: 100px; display:none"></iframe>
+                  </p>
+                </span> </td>
+              </tr>
+         </table>
+         <p></p>
+         <p>Only pdf files, Max 20M/file</p></td>
+     </tr>
+ <!--     add new  -->
+     <tr>
+         <td colspan="4" height="20" style="background: url(images/dotted.jpg) repeat-x 0 10px; ">&nbsp;</td>
+       </tr>
+ <!--     end new -->
+     <tr>
+       <td valign="top">
+           <input name="post"   type="button" class="blue_btn"  onClick="if(check_form()){ document.frm.submit();}" value="{UPDATE}"> &nbsp;
+           <input class="blue_btn" name="reset" type="button" onClick="redo(); document.frm.submit();"  id="reset"  value="{RESET}">
+       </td>
+       <td width="" align="left" valign="top">
+          <span class="text_1b1x">
+        <input name="submit2" type="submit"  value="{DTR}" class="blue_btn" onClick="if(check_form()){r_tranlate(); document.frm.submit();}" >
+        </span>        
+	   </td>
+       <td width="" align="center" valign="top"><span class="text_1b1x">
+           <input name="traduction" type="button" class="blue_btn blue_btn_l"  onClick="if(check_form()){count_char(); document.frm.submit();}" value="{DTR}">
+           </span><span class="text_1b1x">{CHARGE_SER}</span><br>
+           </td>
+     
+     </tr>
+     <tr valign="bottom">
+       <td height="84" colspan="4" align="center" valign="top" class="text_1a2d">{G_NEW_LANG1}<br>
+         ({G_NEW_LANG2})
+         <p>{img_language}</p>
+         <span id="auto_trans"></span></td>
+     </tr>
+     <tr>
+       <td colspan="3" height="20">&nbsp;</td>
+     </tr>
+   </table>
+   <table width=1010 cellpadding=0 cellspacing=0>
+  <tr>
+    <td height='1' background='images/point_gr.gif'>	</td>
+  </tr>
+  <tr><td height=10></td></tr>
+</table>
+</form>
+    <div  id="browse_photo"  style="position:absolute; top: 830px;left: 701px;" > 
+      <form action="ajax_upload_photo_offre.php" name="fuphoto" target="upload_iframe" method="post" enctype="multipart/form-data">
+  	     <input type="hidden" name="id_offre1" value="{id_offre}">
+ 	     <input type="hidden" name="id_offre_temp" value="{id_offre_temp}">	 
+			        <input type="file" name="u_photo" size="5px" onChange="check_photo()">
+    </form>		
+	<p>
+	  <iframe name="upload_iframe" style="width: 600px; height: 200px; display:none "></iframe>
+	</p>
+   </div>
+{(bottom)} 
+</div>
+</body>
+</html>
+<!-- END: MAIN

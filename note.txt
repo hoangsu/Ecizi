@@ -1,0 +1,26 @@
+trang post_offre1
+ line 57
+ <td colspan="4"  height="54"><span class="text_1f1d" style="color:#3989C9; font-size:15px"> <b>{POST_OFFRE1}</b></span></td>
+
+ sửa thành
+
+  <td colspan="4"  height="54"><span class="text_1f1d" style="color:#3989C9; font-size:22px"> <b>{POST_OFFRE1}</b></span></td>
+
+
+- line 263 
+thêm dòng
+ <tr>
+         <td colspan="4" height="20" style="background: url(images/dotted.jpg) repeat-x 0 10px; ">&nbsp;</td>
+       </tr>
+
+-------------------------------------------------------------------------------
+
+trang  appel_offre1
+ line 70
+<td  height="54" width="100%"><span class="text_1f1d" style="color:#3989C9; font-size:15px"> <b>{APPEL_OFFRE1}</b></span></td>
+
+ sửa thành 
+
+<td  height="54" width="100%"><span class="text_1f1d" style="color:#3989C9; font-size:22px"> <b>{APPEL_OFFRE1}</b></span></td>
+
+  

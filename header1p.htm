@@ -1,0 +1,27 @@
+ <table width='800' cellpadding='0' cellspacing='0'>
+ <tr>
+<td><img src='images/logo.png'  border='0'   onClick="window.open('ouvrirh.php')">  </td>
+      <td colspan='2' height='80' valign="middle"><p align='left' style='color:#CCCCCC; font:20px Arial;' ><b> {SLOGAN} </b></p></td>
+ </tr>
+ <tr>
+   <td align='center' width='151'>
+     <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a>   </td>
+   <td width='213' align='center' >
+     <a href='my_account.php'  >{MY_ACCOUNT}</a>   </td>
+   <td align='right' width='393' background='images/line.gif' class='text_1a1x'>
+       <form name="combolang">   
+            <a id="span_user_info" class="active">{WELCOME}</a>  | <a href='sign_out.php'> {SIGN_OUT} </a> |
+  <span id="sp_combo_lang">
+    <select name='combo_langue' onChange="change_langue(this.value);">
+	     
+    {combo_langue}
+          
+      </select> </span>   </form>    </td>
+ </tr>
+ <tr>
+   <td height='24' colspan='3' align='right' class='text_1b1x'>
+      <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a href='#'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a>| <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')" width="10px" height="10px"> &nbsp;
+	  	  <a onClick="window.open('live_support.php')">{G_SUP_ONL} </a></td>
+ </tr>
+</table>
+
