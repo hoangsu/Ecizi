@@ -952,7 +952,7 @@ table.left_menu {border-collapse: collapse}
 .sais input[type="text"], .sais textarea {border-width:1px !important;}
 .sais #layer_addition input[type="text"],.sais #layer_addition textarea {width: auto; margin-left: 5px; padding-left: 5px;}
 .sais .divcombo_categories select {width:300px; height: 135px}
-.sais .deco a {text-decoration: underline; color:#5d7e8f }
+.sais .deco a {text-decoration: underline; color:#5d7e8f; font-size: 15px;}
 #footer .nav ul {padding:0;}
 .page_title_td {background-color:#779BCA; color:#fff;font-size: 16px;font-weight: bold; width:100%; padding-left: 10px}
 .title_nobg {color:#3989C9; font-size:22px}
