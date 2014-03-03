@@ -187,7 +187,7 @@ img {border:none;}
 	font-weight: bold;
 	font-family: Tahoma, Arial, Varana;
 	font-size: 12px;
-	cursor: pointer;
+	cursor: pointer; text-align: center;
 }
 .form_search .btn_search_other:hover{
 	color: #000;
@@ -201,7 +201,7 @@ img {border:none;}
 	color: #fff;
 	font-weight: bold;
 	font-family: Tahoma, Arial, Varana;
-	font-size: 12px;
+	font-size: 12px; text-align: center;
 }
 .recent a:hover {
 	color: #f89820;
@@ -458,7 +458,6 @@ img {border:none;}
 
 /* TRANSLATE CONTENT */
 #translate_content span {
-	border-bottom: 2px dotted gray;
 }
 #translate_content a:hover {
 	color: #f89820;
@@ -951,7 +950,7 @@ table.left_menu {border-collapse: collapse}
 /*------------------------------sais_ent2------------------------- */
 .sais input[type="text"],.sais select.selection {width:500px; margin: 5px 0;}
 .sais input[type="text"], .sais textarea {border-width:1px !important;}
-.sais #layer_addition input[type="text"],.sais #layer_addition textarea {width: auto; margin-left: 5px;}
+.sais #layer_addition input[type="text"],.sais #layer_addition textarea {width: auto; margin-left: 5px; padding-left: 5px;}
 .sais .divcombo_categories select {width:300px; height: 135px}
 .sais .deco a {text-decoration: underline; color:#5d7e8f }
 #footer .nav ul {padding:0;}
@@ -959,8 +958,12 @@ table.left_menu {border-collapse: collapse}
 .title_nobg {color:#3989C9; font-size:22px}
 .td_laquo {font-size:20px; line-height:17px; padding:0 2px 0 5px;}
 .td_laquo span {cursor: pointer;}
-.sais #layer_addition table td {background-color: #779BCA !important; background-image: none !important;color: #4888b6;font-size: 20px;font-weight: bold;}
-
+.sais #layer_addition > table > tbody > tr > td {background-image: none !important;}
+.sais #layer_addition > table:first-child > tbody > tr > td.text_1e1w {color: #4888b6;font-size: 18px;}
+.sais #layer_addition #frm_strategie input {vertical-align: top}
+.sais #layer_addition #frm_strategie p {text-align: left}
+.sais #layer_addition > table.text_1a1b > tbody > tr > td > table > tbody > tr > td {width:1000px;}
+.sais #layer_addition #frm_strategie > table > tbody > tr> td > textarea {width:710px;}
 /*------------------------------translate------------------------- */
 #translate_content .scroll-pane td a.text_1a1b,#frm_note_dtr #update4 {-webkit-border-radius: 3px;
 -moz-border-radius: 3px;
@@ -978,11 +981,13 @@ background: linear-gradient(#1180C4, #1e99d5);
 -pie-background: linear-gradient(#1180C4, #1e99d5);
 padding: 5px 10px;text-align: center;display: inline-block;
 font-size: 12px;font-weight: bold;color: #fff; margin-bottom: 10px; float: right; position: static;}
-#translate_content .scroll-pane > table > tbody > tr {background: url(../images/dotted.jpg) repeat-x 0 bottom}
+#translate_content .scroll-pane > table > tbody > tr,#translate_content.unpaid > div > div.box_left > div > table > tbody > tr > td > table > tbody > tr {background: url(../images/dotted.jpg) repeat-x 0 bottom}
+#translate_content.unpaid .scroll-pane > table > tbody > tr {background: none;}
 #translate_content .scroll-pane table {width:650px; background: none !important}
 #translate_content > div.data > div.box_data > div.box_left > div > table > tbody > tr > td > table > tbody > tr > td:nth-child(2) {text-align: right;}
 a {cursor: pointer;}
 #translate_content .box_data .box_left {overflow-y:auto; overflow-x:hidden;}
+#translate_content .box_right #layer_additionb table {width: 295px}
 #frm_note_dtr #update4 {border-style: none !important;background-color: transparent !important; float: right;}
 #frm_note_dtr #note {border:1px solid #aaa !important; width:284px;}
 #translate_content .box_data .box_right a {display: inline-block; margin-bottom: 10px;}
@@ -991,4 +996,4 @@ a {cursor: pointer;}
 #translate_content .box_data .box_right em {font-style: normal;}
 #translate_content .box_data { overflow: hidden;}
 #header tr td {white-space: nowrap;}
-#footer .left a.link_1b1x, #footer .left span.nw {white-space: nowrap;}
+#footer .left a.link_1b1x, #footer .left span.nw {white-space: nowrap; }

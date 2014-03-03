@@ -112,35 +112,21 @@ function init_form() {
    </td></tr>
   </table>
 
-<div id="translate_content">
+<div id="translate_content" class="unpaid">
   <div class="box_data">
     <div class="box_left">
       <div class="scroll-pane">
- <table width="1000" cellpadding="0" cellspacing="0">   
-   <tr><td colspan="3" height="1" ></td></tr>
+   <table width="650" cellpadding="0" cellspacing="0">   
+   <tr><td colspan="3" height="1"></td></tr>
    <tr>
      <td colspan="3">
-     <table width="790" cellpadding="0" cellspacing="0">
+     <table width="650" cellpadding="0" cellspacing="0">
       
     {list_tradu}
     
      </table>  </td>
    </tr>
    
-
-   <tr>
-   <td colspan="3"><table width="790" cellpadding="0" cellspacing="0">
-     
-   <tr><td colspan="3" height="1"></td></tr>
-     </table>   </td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-   </tr>
-   <tr><td colspan="3" height="1"></td></tr>
-   <tr>
-    <td>&nbsp;</td>
-   </tr>
    <tr>
      <td colspan="3" height="30"></td>
    </tr>
@@ -154,27 +140,27 @@ function init_form() {
 
 <div class="box_right">
   <div id="layer_addition"  >       </div>
-    <table cellpadding="0" cellspacing="0" id="add_note0" style=" display:none" width="1000" ><tr valign="bottom">
+
+      <table cellpadding="0" cellspacing="0" id="add_note0" style="display:none" width="295" >
+        <tr>
       <td width="262" height="38" class="text_1a1b">&nbsp;&nbsp;&nbsp;{NEW_ENTRY} {MESS_TO_TR}<br>
-      <br><br><br>
-       <p align="right" class="text_1b1x">Character count</p></td> 
-      <td width="534"  >
-    <form action="save_note_dtr_s1.php" name="frm_note_dtr" id="frm_note_dtr" target="iframe_data" method="post" >
+   
+       </td> 
+    </tr>
+    <tr><td>
+<form action="save_note_dtr_s1.php" name="frm_note_dtr" id="frm_note_dtr" target="iframe_data" method="post" >
        <input type="hidden" name="langue" value="{LANGUE_PRE}">
         <input type="hidden" name="id_dtr" value="">
     <span class="text_1b1x">
     <textarea name="note" cols="60" rows="5" id="note"  style="border-style:inset; border-width:2px"></textarea></span>
     <br>
-      Max. 20 characters 
-    <input name="update4" type="button" id="update4" style="border-style:outset; background-color:#CCCCCC" value="{SEND}" onClick=" if(check_form_note_dtr()){document.frm_note_dtr.submit();}">
-    </form>   </td>  
-    </tr></table>
+      <span class="text_1b1x">Character count</span> <br> <span> Max. 20 characters </span>
+    <input name="update4" type="button" id="update4" style="cursor: pointer;" value="{SEND}" onClick=" if(check_form_note_dtr()){document.frm_note_dtr.submit();}">
+    </form>  
+    </td></tr>
+  </table>
 
 </div>
-	   	
-
-<div id="layer_additionb"  >
-   </div>
  
  </div></div>
 
