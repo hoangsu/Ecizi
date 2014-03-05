@@ -39,12 +39,12 @@ function init_form() {
  <tr>
   <td>
     <a href="/"><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/></a><br>
-      <i class="slogan"> {SLOGAN}</i> <span class="text_1d2g">{BETA_SYSTEM}</span>
+      <i class="slogan"> {SLOGAN}</i> 
   </td>
       <td colspan='2' height='80' valign="middle" align="right">
           <form name="combolang" action="request_trad_on_progress_paid.php"  method="post"> 
       <input type="hidden" name="id_tr" value="{id_tr}">
-             {G_HI} {nom_util}  |   <a href='ouvrir.php?id_f=2&categorie=00'>{OFFER_BOARD}</a> | <a href='my_account.php'  >{MY_ACCOUNT}</a> | <a href='sign_out.php'>{SIGN_OUT}</a>  | 
+             {G_HI} {nom_util}  |  <a href='sign_out.php'>{SIGN_OUT}</a>  | 
      <select name='combo_langue' onChange=" document.combolang.submit();" class="selection">
     {combo_langue}
       </select>   </form>
@@ -74,7 +74,7 @@ function init_form() {
 		   {REQUEST_TRAD_ON_PROGRESS_PAID}      </td> 
    </tr>
    <tr>
-	  <td colspan="2" height="50"><span class="text_1f1d"> {REQUEST_TRAD_ON_PROGRESS_PAID}</span></td>
+	  <td height="30" class="page_title_td"><span class="text_1f1d"> {REQUEST_TRAD_ON_PROGRESS_PAID}</span></td>
    </tr> 
    
    <tr>

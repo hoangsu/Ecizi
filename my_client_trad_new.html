@@ -38,12 +38,12 @@ function init_form() {
  <tr>
   <td>
     <a href="/"><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/></a><br>
-      <i class="slogan"> {SLOGAN}</i> <span class="text_1d2g">{BETA_SYSTEM}</span>
+      <i class="slogan"> {SLOGAN}</i> 
   </td>
       <td colspan='2' height='80' valign="middle" align="right">
           <form name="combolang" action="my_client_trad_new.php"  method="post"> 
       <input type="hidden" name="id_d" value="{id_d}">
-         {G_HI} {nom_util} | <a href='my_account.php'  >{MY_ACCOUNT}</a> | <a href='sign_out.php'>{SIGN_OUT}</a> | 
+         {G_HI} {nom_util} | <a href='sign_out.php'>{SIGN_OUT}</a> | 
      <select name='combo_langue' onChange=" document.combolang.submit();" class="selection">
     {combo_langue}
       </select>   </form>  
@@ -52,7 +52,7 @@ function init_form() {
  </tr>
  <tr>
    <td align='center' width='138'>
-     <!-- <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a>  -->  </td>
+    </td>
    <td width='240' align='center' >
       </td>
    <td align='right' width='490' class='text_1a1x'><img src="images/header_10.jpg" width="803" height="8" alt="">
@@ -60,7 +60,7 @@ function init_form() {
  </tr>
  <tr>
    <td height='24' colspan='3' align='left' class='text_1b1x'>
-     <a href='ouvrir.php?id_f=2&categorie=00'  >{OFFER_BOARD}</a> 
+    
         </td>
  </tr>
 </table>
