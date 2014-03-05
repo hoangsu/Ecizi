@@ -382,7 +382,7 @@ img {border:none;}
 	color: #000000;
 }
 #footer .detail .left {
-	float: left; width: 482px;
+	float: left; 
 }
 #footer .detail .right img {
 	vertical-align: middle;
@@ -988,7 +988,7 @@ font-size: 12px;font-weight: bold;color: #fff; margin-bottom: 10px; float: right
 a {cursor: pointer;}
 #translate_content .box_data .box_left {overflow-y:auto; overflow-x:hidden;}
 #translate_content .box_right #layer_additionb table {width: 295px}
-#frm_note_dtr #update4 {border-style: none !important;background-color: transparent !important; float: right;}
+#frm_note_dtr #update4 {border-style: none !important;float: right;}
 #frm_note_dtr #note {border:1px solid #aaa !important; width:284px;}
 #translate_content .box_data .box_right a {display: inline-block; margin-bottom: 10px;}
 #translate_content .box_right #layer_addition table  tr {background: none!important}
