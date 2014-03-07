@@ -969,7 +969,7 @@ border-radius: 3px;
 box-shadow: #666 0px 2px 3px;
 background: #779bca;
 padding: 5px 10px;text-align: center;display: inline-block;
-font-size: 12px;font-weight: bold;color: #fff; margin-bottom: 10px; float: right; position: static;}
+font-size: 12px;font-weight: bold;color: #fff; margin-bottom: 10px; float: right; position: static; cursor: pointer;}
 #translate_content .scroll-pane > table > tbody > tr,#translate_content.unpaid > div > div.box_left > div > table > tbody > tr > td > table > tbody > tr {background: url(../images/dotted.jpg) repeat-x 0 bottom}
 #translate_content.unpaid .scroll-pane > table > tbody > tr {background: none;}
 #translate_content .scroll-pane table {width:650px; background: none !important}
@@ -986,3 +986,6 @@ a {cursor: pointer;}
 #translate_content .box_data { overflow: hidden;}
 #header tr td {white-space: nowrap;}
 #footer .left a.link_1b1x, #footer .left span.nw {white-space: nowrap; }
+/*#translate_content > div > div.box_left > div > table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > table > tbody > tr > td > a:nth-child(3) {
+display: none;
+}*/

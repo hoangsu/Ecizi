@@ -4,14 +4,14 @@
 <html   {RIGHT_LEFT_ENTRY} >
 <head>
 <meta http-equiv='Content-Type' content='text/html; {CHARSET}' />
-<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
-<title> {REQ_TRANS} {COMPL_NOT_PAID} </title>
+<link rel='stylesheet' href='css/style.css' type='text/css'>
+<title> {REQ_TRANS} {COMPLETE} {PAID} </title>
 
 </head>
 <script language="JavaScript" src="ajax.js" type="text/javascript"></script>
 <script language="JavaScript" src="saisir.js" type="text/javascript"></script>
 <script language="JavaScript" src="traduction.js" type="text/javascript"> </script>
-<script language="JavaScript" src="request_trad_on_progress.js" type="text/javascript"> </script>
+<script language="JavaScript" src="request_trad.js" type="text/javascript"> </script>
 <script language="JavaScript" >
 var vp_chat ='{SVP_CHAT}, {nom_traducteur}';
 var arr_mpay_tr = new Array();
@@ -19,13 +19,9 @@ var vid_tr='{id_tr}';
 var vid_p='{id_tr}';
 var vlangue='{LANGUE_PRE}';
 var vgps_dtr = '{GPS_DTR}';
-var want_cont = '{WANT_CONTINUE}';
-var close_trans = '{CLOSE_TRANS_REQUEST}';
 var vmessage_send= '{MESSAGE_SEND}';
-var vwin=2;
 {arr_mpay_trb}
 {arr_moisb}
-{arr_prix}
 
 function init_form() {  
 	setTimeout("veri_u()",200);
@@ -36,7 +32,7 @@ function init_form() {
 
 <body onLoad="init_form();">
 <div id="wrapper">
-
+   
   <table width='1000' cellpadding='0' cellspacing='0' id="header">
  <tr>
   <td>
@@ -44,7 +40,7 @@ function init_form() {
       <i class="slogan"> {SLOGAN}</i> 
   </td>
       <td colspan='2' height='80' valign="middle" align="right">
-          <form name="combolang" action="request_trad_completed_unpaid.php"  method="post"> 
+        <form name="combolang" action="request_trad_completed_paid.php"  method="post"> 
       <input type="hidden" name="id_tr" value="{id_tr}">
              {G_HI} {nom_util}  |   <a href='sign_out.php'>{SIGN_OUT}</a>  | 
      <select name='combo_langue' onChange=" document.combolang.submit();" class="selection">
@@ -67,21 +63,20 @@ function init_form() {
         </td>
  </tr>
 </table>
+
   <table width="1000" cellpadding="0" cellspacing="0">
     <tr>
 	  <td  height="20">
 	       <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a> &raquo;
-		   <a href="my_account.php">{MY_ACCOUNT}</a> &raquo; 
-		   <a href="table_request_trad.php"> {DU_DTR} </a>&raquo;
-		   
-		   {COMPL_NOT_PAID}      </td> 
+		   <a href="my_account.php">{MY_ACCOUNT}</a> &raquo; <a href="table_request_trad.php"> {DU_DTR} </a>&raquo;
+		    {COMPLETE} {PAID}      </td> 
    </tr>
    <tr>
-	  <td height="30" class="page_title_td"><span class="text_1f1d"> {REQ_TRANS} {COMPL_NOT_PAID}</span>      </td>
+	  <td  height="30" class="page_title_td"><span class="text_1f1d">  {COMPLETE} {PAID} </span></td>
    </tr> 
    
    <tr>
-     <td height="30" class="text_1b3b"><a href="ouvrir_la.php?id_f=70&id_ent={id_tr}&langue={LANGUE_PRE}" class="link_1a1r"> {nom_traducteur} </a>. {REQ_COMPL_NOT_PAID_EXP}   <a href="traduc_definition.html" >{G_CLI_HER}</a> {TO_VIEW_DEFINITION}. 	 </td>
+     <td height="30" class="text_1b3b"><a href="ouvrir_la.php?id_f=70&id_ent={id_tr}&langue={LANGUE_PRE}" class="link_1a1r"> {nom_traducteur} </a>. {REQ_COMPL_PAID_EXP} <a href="traduc_definition.html" >{G_CLI_HER}</a> {TO_VIEW_DEFINITION}. </td>
    </tr>
    <tr>
      <td><br>
@@ -97,13 +92,12 @@ function init_form() {
      <td height="15"></td>
    </tr>
    <tr valign="middle">
-   <td height="25" background="images/2e_solid.gif">
-   <a onClick="select_all_dtr()">    	 <img src="images/arrow_02.gif" border="0"> {SELECT_ALL} </a> | 
+   <td height="25" background="images/2e_solid.gif"> <a onClick="select_all_dtr()">    	 <img src="images/arrow_02.gif" border="0"> {SELECT_ALL} </a> | 
 <a onClick="deselect_all_dtr()">{SELECT_ALL_NO}</a> | 
-<a onClick="update_pay_dtrs(0)">
+<a onClick="update_pay_dtrs(1)">
 {UPDATE_PAYMENT_STATUS}  </a> | 
-<a onClick="pay_tradu_esc()" style="visibility:hidden">
-{PAY_TRADU_ESC}  </a> <a onClick="window.open('account_individual_s1.php')"  style="visibility:hidden">{G_VIEW} {ACCOUNT_INDIVIDUAL}</a></td>
+<a onClick="pay_tradu_esc()"  style="visibility:hidden">
+{PAY_TRADU_ESC}  </a> <a onClick="window.open('account_individual_s1.php')"  style="visibility:hidden">{ACCOUNT_INDIVIDUAL}</a >&nbsp;<span id="sp_pages"> </span>	 </td>
  </tr>
    <tr><td height="1" >
    </td></tr>
@@ -112,6 +106,7 @@ function init_form() {
 	
    </td></tr>
   </table>
+
 <div id="translate_content" class="unpaid">
   <div class="box_data">
     <div class="box_left">
@@ -139,11 +134,11 @@ function init_form() {
        </td> 
     </tr>
     <tr><td>
-<form action="save_note_dtr_s1.php" name="frm_note_dtr" id="frm_note_dtr" target="iframe_data" method="post" >
+ <form action="save_note_dtr_s1.php" name="frm_note_dtr" id="frm_note_dtr" target="iframe_data" method="post" >
        <input type="hidden" name="langue" value="{LANGUE_PRE}">
         <input type="hidden" name="id_dtr" value="">
     <span class="text_1b1x">
-    <textarea name="note" cols="60" rows="5" id="note"  ></textarea></span>
+    <textarea name="note" cols="60" rows="5" id="note" ></textarea></span>
     <br>
       <span class="text_1b1x">Character count</span> <br> <span> Max. 20 characters </span>
     <input name="update4" type="button" id="update4" style="cursor: pointer;" value="{SEND}" onClick=" if(check_form_note_dtr()){document.frm_note_dtr.submit();}">
@@ -153,13 +148,13 @@ function init_form() {
     </div>
   </div>
 </div>
-	<p align="center">{img_language} </p>  
+  <p align="center">{img_language} </p>  
 
   {(bottomb)}
  </div>
-<span id="list_p" style="visibility:hidden">non</span> 
+ <span id="list_p" style="visibility:hidden">non</span> 
 <span id="list_u" style="visibility:hidden">non</span> 
-   <iframe name="iframe_data" style="width: 340px; height: 100px; display:none "></iframe>
+   <iframe name="iframe_data" style="width: 340px; height: 100px; display:none"></iframe>
 </body>
 </html>
 <!-- END: MAIN -->

@@ -47,7 +47,7 @@ function init_form() {
      <select name='combo_langue' onChange=" document.combolang.submit();" class="selection">
     {combo_langue}
       </select>   </form>
-   <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a href='#'>{G_FAQ}</a> | <a href='#'>{G_PARTN}</a>  | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>  
+  <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a target='_blank' href='FAQ.html'>{G_FAQ}</a>   | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>  
           </td>
  </tr>
  <tr>
@@ -141,7 +141,7 @@ function init_form() {
        <input type="hidden" name="langue" value="{LANGUE_PRE}">
         <input type="hidden" name="id_dtr" value="">
     <span class="text_1b1x">
-    <textarea name="note" cols="60" rows="5" id="note"  style="border-style:inset; border-width:2px"></textarea></span>
+    <textarea name="note" cols="60" rows="5" id="note"  ></textarea></span>
     <br>
       <span class="text_1b1x">Character count</span> <br> <span> Max. 20 characters </span>
     <input name="update4" type="button" id="update4" style="cursor: pointer;" value="{SEND}" onClick=" if(check_form_note_dtr()){document.frm_note_dtr.submit();}">
@@ -152,7 +152,7 @@ function init_form() {
 </div>
  
  </div></div>
-<p>{img_language} </p>
+<p align="center">{img_language} </p>
    {(bottomb)}
  </div>
  <span id="list_p"  style="visibility:hidden">non</span> 

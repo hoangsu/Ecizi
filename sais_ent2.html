@@ -46,23 +46,23 @@ function init_form() {
  <tr>
  	<td>
 		<a href="/"><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/></a><br>
-			<i class="slogan"> {SLOGAN}</i> <span class="text_1d2g">{BETA_SYSTEM}</span>
+			<i class="slogan"> {SLOGAN}</i> 
 	</td>
       <td colspan='2' height='80' valign="middle" align="right">
       	 <form name="combolang">   
-              {G_HI} {contact_nom} -{contact_prenom} | <a href='my_account.php'  >{MY_ACCOUNT}</a> | <a href='sign_out.php'>{SIGN_OUT}</a> |
+              {G_HI} {contact_nom} -{contact_prenom} | <a href='sign_out.php'>{SIGN_OUT}</a> |
 			  <span id="sp_combo_lang">
     <select name='combo_langue' onChange="change_langue(this.value);"  class="selection">
 	     
     {combo_langue}
           
       </select> </span>  </form> 
-       <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a href='#'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>  
+       <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a target='_blank' href='FAQ.html'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>  
       	  </td>
  </tr>
  <tr>
    <td align='center' width='138'>
-     <!-- <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a>  -->  </td>
+     </td>
    <td width='240' align='center' >
       </td>
    <td align='right' width='490' class='text_1a1x'><img src="images/header_10.jpg" width="803" height="8" alt="">

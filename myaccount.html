@@ -127,7 +127,7 @@ function init_form() {
 			<i class="slogan"> {SLOGAN}</i> </td>
 		<td rowspan="3">
 			<img src="images/spacer.gif" width="251" height="58" alt=""></td>
-		<td rowspan="2"><p class="user_menu"><span class="welcome text_1a1x">{G_HI} {u_info}</span> | <!-- <a href="" class="yellow">Tài khoản của tôi</a> |  --><a href='sign_out.php' class="yellow">{SIGN_OUT}</a></p>
+		<td rowspan="2"><p class="user_menu"><span class="welcome text_1a1x">{G_HI} {u_info}</span> | <a href='sign_out.php' class="yellow">{SIGN_OUT}</a></p>
 		<td>
 			<select name='combo_langue' class="selection" onChange="change_langue(this.value); ">
   		  {combo_langue_my_ac}
@@ -142,7 +142,7 @@ function init_form() {
 			<img src="images/spacer.gif" width="135" height="9" alt=""></td>
 	</tr>
 	<tr>
-		<td valign="top"><p class="user_menu">	<a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a href='#'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> | <a  onClick="window.open('appel_affiliate.php')">{G_PARTN}</a>   </p>
+		<td valign="top"><p class="user_menu">	<a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a target='_blank' href='FAQ.html'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> | <a  onClick="window.open('appel_affiliate.php')">{G_PARTN}</a>   </p>
 		<td valign="top">
 			<img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a> </td>
 	</tr>

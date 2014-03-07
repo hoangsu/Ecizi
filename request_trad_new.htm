@@ -48,7 +48,7 @@ function init_form() {
     </div>
     <div class="box_right">
       <div class="nav">{G_HI} {nom_util} | <a href='sign_out.php' class="yellow">{SIGN_OUT}</a> <br/>
-		   <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a href='#'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> | <a onClick="window.open('aff_regis_01.{LANGUE_PRE}.htm')" >{G_PARTN}</a>
+		   <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a target='_blank' href='FAQ.html'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> 
 		  </div>
        <form name="combolang" action="request_trad_new.php"  method="post"> 
       <div class="support">
@@ -97,7 +97,7 @@ function init_form() {
 <form action="save_prix_dtr_s1.php" name="frm_prix_dtr" id="frm_prix_dtr" target="iframe_data" method="post" >
      <input type="hidden" name="id_code" value="{idx}">
      <input type="hidden" name="id_si" value="">	 
-     <input name="prix_r" type="text" style="border-style:inset; border-width:2px" size="20" />US $
+     <input name="prix_r" type="text"  size="20" />US $
 	  <input name="update1" type="button" id="update1" style="border-style:outset; background-color:#CCCCCC" value="{UPDATE}" onClick=" if(check_form_prix_dtr()){document.frm_prix_dtr.submit();}">
 	  </form>
 			</div>
@@ -106,11 +106,11 @@ function init_form() {
 			<form action="save_jour_dtr_s1.php" name="frm_jour_dtr" id="frm_jour_dtr" target="iframe_data" method="post" >
      <input type="hidden" name="jour" value="">
      <input type="hidden" name="id_si" value="">	 	 
-<input name="jourd" type="text" id="jourd" style="border-style:inset; border-width:2px" value="{jourd}" size="3" maxlength="2" onChange="verif_j('jour')" >
+<input name="jourd" type="text" id="jourd"  value="{jourd}" size="3" maxlength="2" onChange="verif_j('jour')" >
 /
-  <input name="jourm" type="text" id="jourm" style="border-style:inset; border-width:2px" value="{jourm}" size="3" maxlength="2"  onChange="verif_j('mois')" >
+  <input name="jourm" type="text" id="jourm"  value="{jourm}" size="3" maxlength="2"  onChange="verif_j('mois')" >
 /
-<input name="joury" type="text" id="joury" style="border-style:inset; border-width:2px" value="{joury}" size="5" maxlength="4"  onChange="verif_j('anne')" >
+<input name="joury" type="text" id="joury"  value="{joury}" size="5" maxlength="4"  onChange="verif_j('anne')" >
 	  <input name="update2" type="button" id="update2" style="border-style:outset; background-color:#CCCCCC" value="{UPDATE}" onClick=" if(check_form_jour_dtr()){document.frm_jour_dtr.submit();}">
 	  </form>
 			
@@ -134,7 +134,7 @@ function init_form() {
 	   <input type="hidden" name="id_tr" value="">
 	   
     <span class="text_1b1x">
-	  <textarea name="note" cols="60" rows="5" id="note"  style="border-style:inset; border-width:2px"></textarea></span>
+	  <textarea name="note" cols="60" rows="5" id="note"  ></textarea></span>
 	  <br>
 		  Max. 20 characters 
 	  <input name="update4" type="button" id="update4" style="border-style:outset; background-color:#CCCCCC" value="{SEND}" onClick=" if(check_form_note_dtr()){document.frm_note_dtr.submit();}">

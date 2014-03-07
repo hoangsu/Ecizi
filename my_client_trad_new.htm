@@ -1,0 +1,157 @@
+<!-- BEGIN: MAIN -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html   {RIGHT_LEFT_ENTRY} >
+<head>
+<meta http-equiv='Content-Type' content='text/html; {CHARSET}' />
+<link rel='stylesheet' href='css/style.css' type='text/css'>
+<title> {MY_CLIENT_TRAD_NEW} {FOR} :{nom_parte}</title>
+
+</head>
+<script language="JavaScript" src="ajax.js" type="text/javascript"></script>
+<script language="JavaScript" src="saisir.js" type="text/javascript"></script>
+<script language="JavaScript" src="my_client_trad_new.js" type="text/javascript"> </script>
+<script language="JavaScript" src="traduction.js" type="text/javascript"> </script>
+<script language="JavaScript" >
+var vp_chat ='{SVP_CHAT}, {nom_parte}';
+var arr_mpay_tr = new Array();
+var vid_d='{id_d}';
+var vid_p='{id_d}';
+var vlangue='{LANGUE_PRE}';
+var vgps_dtr = '{GPS_DTR}';
+var want_cont = '{WANT_CONTINUE}';
+var close_trans = '{CLOSE_TRANS_REQUEST}';
+var vmessage_send= '{MESSAGE_SEND}';
+{arr_mpay_trb}
+{arr_moisb}
+
+function init_form() {  
+	setTimeout("veri_u()",200);
+}
+
+
+</script>
+
+<body onLoad="init_form();">
+
+ <div id="wrapper">
+
+<table width='1000' cellpadding='0' cellspacing='0' id="header">
+ <tr>
+  <td>
+    <a href="/"><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/></a><br>
+      <i class="slogan"> {SLOGAN}</i> 
+  </td>
+      <td colspan='2' height='80' valign="middle" align="right">
+         <form name="combolang" action="my_client_trad_new.php"  method="post"> 
+      <input type="hidden" name="id_d" value="{id_d}">
+             {G_HI} {nom_util}  |   <a href='sign_out.php'>{SIGN_OUT}</a>  | 
+     <select name='combo_langue' onChange=" document.combolang.submit();" class="selection">
+    {combo_langue}
+      </select>   </form>
+    <a href='#'>{G_EMAI_US}</a> | <a target='_blank' href='FAQ.html'>{G_FAQ}</a>   | <img src='images/chat.gif' border='0'> &nbsp;<a href='#'>{G_SUP_ONL} </a>  
+          </td>
+ </tr>
+ <tr>
+   <td align='center' width='138'>
+    </td>
+   <td width='240' align='center' >
+      </td>
+   <td align='right' width='490' class='text_1a1x'><img src="images/header_10.jpg" width="803" height="8" alt="">
+        </td>
+ </tr>
+ <tr>
+   <td height='24' colspan='3' align='left' class='text_1b1x'>
+    
+        </td>
+ </tr>
+</table>
+
+
+  <table width="1000" cellpadding="0" cellspacing="0">
+    <tr>
+	  <td colspan="3"  height="20">
+	       <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a> &raquo;
+		   <a href="my_account.php">{MY_ACCOUNT}</a>&raquo;<a href="table_client_trad.php" class="link_1d1b">{TABLE} {CLIENT_TRADU}</a> &raquo;
+		   {MY_CLIENT_TRAD_NEW}      </td> 
+   </tr>
+   <tr>
+	  <td colspan="3" height="30" class="page_title_td"><span class="text_1f1d"> {MY_CLIENT_TRAD_NEW} {FROM} :{nom_parte}</span></td>
+   </tr> 
+   
+   <tr>
+     <td colspan="3" height="30" class="text_1b3b"><a   onClick="window.open('ouvrir_la.php?id_f=70&id_ent={id_d}&langue={LANGUE_PRE}')" class="link_1a1r">{nom_parte} </a> {MY_CLIENT_TRAD_EXP_1}. <a href="traduc_definition.html" >{G_CLI_HER}</a> {TO_VIEW_DEFINITION}.	 </td>
+   </tr>
+   <tr>
+     <td colspan="3"><br>
+	  <table width="790">
+	   <tr align="center" valign="middle">
+	     <td> <span id="chat_parte">chat</span> </td>
+		 <td><img src="images/y_mail.gif" border="0"  onclick="mail_to({id_d});" title="{MAILS_TO_PARTENAIRE}">&nbsp;&nbsp;<a   onclick="mail_to({id_d});" class="link_1d1b">{MAILS_TO_PARTENAIRE}</a></td>
+		</tr>
+	   </table>	  </td> 
+   </tr>
+   <tr>
+     <td colspan="3" height="15"></td>
+   </tr>
+   <tr valign="middle">
+     <td colspan="3" align="right" height="25" background="images/2e_solid.gif">{PAGE}&nbsp; 1 &nbsp;<span id="sp_pages"> </span></td>
+   </tr>
+   <tr><td colspan="3" height="1">
+   </td></tr>
+      <tr><td colspan="3" height="1" >
+ 
+   </td></tr>
+  </table>
+
+
+  <div id="translate_content" class="unpaid">
+  <div class="box_data">
+    <div class="box_left">
+      <div class="scroll-pane">
+        <table width="650" cellpadding="0" cellspacing="0">   
+   <tr><td colspan="3" height="1"></td></tr>
+   <tr>
+     <td colspan="3">
+     <table width="650" cellpadding="0" cellspacing="0">
+      
+    {list_tradu}
+    
+     </table>  </td>
+   </tr>
+  </table>
+      </div>
+    </div>
+    <div class="box_right">
+      <div id="layer_addition"  >
+     </div>
+  <div id="layer_additionb"  >
+   </div>
+             <div id="add_note0"  style="visibility:hidden" >
+    
+    {NEW_ENTRY} {MESS_TO_TR}<br>
+      <span  id="info_traduction">  </span>
+    <form action="save_note_tr_dtr_s1.php" name="frm_note_dtr" id="frm_note_dtr" target="iframe_data" method="post" >
+       <input type="hidden" name="id_si" value="">
+       <input type="hidden" name="id_dtr_tr" value="">
+        <input type="hidden" name="langue" value="{LANGUE_PRE}">   
+    <span class="text_1b1x">
+    <textarea name="note" cols="45" rows="6" id="note" ></textarea></span>
+    <br>
+      <span class="text_1b1x">Character count</span> <br> <span> Max. 20 characters </span>
+    <input name="update4" type="button" id="update4" style="" value="{SEND}" style="cursor:pointer" onClick=" if(check_form_note_dtr()){document.frm_note_dtr.submit();}">
+    </form> 
+    
+    </div>  
+    </div>
+  </div>
+</div>
+  <p align="center">{img_language} </p>  
+
+  {(bottomb)}
+ </div>
+  <span id="list_p"  style="visibility:hidden">non</span> 
+ <span id="list_u"  style="visibility:hidden">non</span> 
+ <iframe name="iframe_data" style="width: 740px; height: 125px; display:none ;"></iframe>
+</body>
+</html>
+<!-- END: MAIN -->

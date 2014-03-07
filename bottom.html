@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/style.css" type="text/css">
+
 <script language="JavaScript" >
 function send_to_friend() {  
 	var vurl= "send_to_friend.php?vurl="+window.location+"&tit_page="+document.title ;
@@ -12,11 +12,11 @@ function send_to_friend() {
 	<div class="nav">
 		<div class="box_nav">
 			<ul>
-				<li><a href="About_us.html">{G_ABOUT_US}</a> | </li>
-				<li><a href="FAQ.html">{G_FAQ}</a> | </li>
-				<li><a href="TOU.html">{EXP_AGRE_TOU}</a> | </li>
-				<li><a href="privacy.html">{G_PRIV_POL}</a> | </li>
-				<li><a href="customer_service.html">Customer Service</a></li>				
+				<li><a target='_blank' href="About_us.html">{G_ABOUT_US}</a> | </li>
+				<li><a target='_blank' href="FAQ.html">{G_FAQ}</a> | </li>
+				<li><a target='_blank' href="TOU.html">{EXP_AGRE_TOU}</a> | </li>
+				<li><a target='_blank' href="privacy.html">{G_PRIV_POL}</a> | </li>
+				<li><a target='_blank' href="customer_service.html">{CUS_SERV}</a></li>				
 				<li><div class="fb-like" data-href="http://apple.com" data-width="50" data-show-faces="true" data-send="true"></div></li>
 			</ul>
 		</div>
@@ -25,8 +25,11 @@ function send_to_friend() {
 	<div class="box_detail">
 		<div class="detail">
 		<div class="left">
-			<a href='Copyright.html' class='link_1b1x'>{G_CORP_RI}</a> | <a href='sitemap.html' class='link_1b1x'>{G_SITE_MAP}</a> | <a href='launching.html' class='link_1b1x'>{LAU_PRO}</a> | <a href='Partnership.html' class='link_1b1x'>{G_PARTN}</a>
-		  <a href="OfficeHAN.html">{G_OFFI_ADDR}</a> | <span class="nw">{T_TEL2} 84-914990608</span></div>
+				<a target='_blank' href='Copyright.html' class='link_1b1x'>{G_CORP_RI}</a>
+			 | <a target='_blank' href='sitemap.html' class='link_1b1x'>{G_SITE_MAP}</a> 
+			 | <a target='_blank' href='launching.html' class='link_1b1x'>{LAU_PRO}</a> 
+			 | <a target='_blank' href='Partnership.html' class='link_1b1x'>{G_PARTN}</a> 
+			 | <a target='_blank' href="OfficeHAN.html">{G_OFFI_ADDR}</a> | <span class="nw">{T_TEL2} 84-914990608</span></div>
 		<div class="right">
 			<a  onclick="send_to_friend()">{G_EMAIL_FRIE} <img src="images/bookmark.png" /></a><br/>
 			<a   onclick="setHome();">{G_BOOKM} <img src="images/email.png" /></a>
