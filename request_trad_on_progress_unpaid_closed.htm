@@ -4,12 +4,13 @@
 <head>
 <meta http-equiv='Content-Type' content='text/html; {CHARSET}' />
 <link rel='stylesheet' href='css/style.css' type='text/css'>
-<title> {REQUEST_TRAD_ON_PROGRESS_UNPAID} {FOR} : {nom_traducteur} </title>
+<title> {REQUEST_TRAD_ON_PROGRESS_UNPAID_CLOSED}</title>
 
 </head>
 <script language="JavaScript" src="ajax.js" type="text/javascript"></script>
 <script language="JavaScript" src="saisir.js" type="text/javascript"></script>
 <script language="JavaScript" src="traduction.js" type="text/javascript"> </script>
+<script language="JavaScript" src="request_trad.js" type="text/javascript"> </script>
 <script language="JavaScript" src="request_trad_on_progress.js" type="text/javascript"> </script>
 <script language="JavaScript" >
 var vp_chat ='{SVP_CHAT}, {nom_traducteur}';
@@ -18,13 +19,9 @@ var vid_tr='{id_tr}';
 var vid_p='{id_tr}';
 var vlangue='{LANGUE_PRE}';
 var vgps_dtr = '{GPS_DTR}';
-var want_cont = '{WANT_CONTINUE}';
-var close_trans = '{CLOSE_TRANS_REQUEST}';
-var vmessage_send= '{MESSAGE_SEND}';
-var vwin=1;
 {arr_mpay_trb}
 {arr_moisb}
-{arr_prix}
+
 function init_form() {  
 	setTimeout("veri_u()",200);
 }
@@ -34,14 +31,15 @@ function init_form() {
 
 <body onLoad="init_form();">
 <div id="wrapper">
-   <table width='1000' cellpadding='0' cellspacing='0' id="header">
+
+  <table width='1000' cellpadding='0' cellspacing='0' id="header">
  <tr>
   <td>
     <a href="/"><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/></a><br>
       <i class="slogan"> {SLOGAN}</i> 
   </td>
       <td colspan='2' height='80' valign="middle" align="right">
-         <form name="combolang" action="request_trad_on_progress_unpaid.php"  method="post"> 
+         <form name="combolang" action="request_trad_on_progress_unpaid_closed.php"  method="post"> 
       <input type="hidden" name="id_tr" value="{id_tr}">
              {G_HI} {nom_util}  | <a href='sign_out.php'>{SIGN_OUT}</a>  | 
      <select name='combo_langue' onChange=" document.combolang.submit();" class="selection">
@@ -61,49 +59,47 @@ function init_form() {
 
 </table>
 
+
   <table width="1000" cellpadding="0" cellspacing="0">
     <tr>
-	  <td  height="20">
+	  <td colspan="2"  height="20">
 	       <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a> &raquo;
-		   <a href="my_account.php">{MY_ACCOUNT}</a> &raquo;<a href="table_request_trad.php">{DU_DTR} </a>&raquo; 
-		   {REQUEST_TRAD_ON_PROGRESS_UNPAID}      </td> 
+		   <a href="my_account.php">{MY_ACCOUNT}</a> &raquo;  <a href="table_request_trad_closed.php"  > {CLOSED_REQUEST}</a> &raquo;
+		   {REQUEST_TRAD_ON_PROGRESS_UNPAID_CLOSED}     </td> 
    </tr>
    <tr><td>&nbsp;</td></tr>
    <tr>
-	  <td height="30" class="page_title_td"><span class="text_1f1d"> {REQUEST_TRAD_ON_PROGRESS_UNPAID}  : {nom_traducteur}</span></td>
-   </tr> 
-   <tr><td>&nbsp;</td></tr>
+    <td colspan="3" height="30" class="page_title_td"><span class="text_1f1d"> {REQUEST_TRAD_ON_PROGRESS_UNPAID_CLOSED}</span></td>
+   </tr>  
+   <tr><td>&nbsp;</td></tr> 
+   
    <tr>
-     <td height="30" class="text_1b3b">{REQUEST_TRAD_EXP_1}&nbsp;<a  onClick="window.open('ouvrir_la.php?id_f=70&id_ent={id_tr}&la={LANGUE_PRE}')"  class="link_1a1r">{nom_traducteur} </a> . <a href="traduc_definition.html" >{G_CLI_HER}</a> {TO_VIEW_DEFINITION}. </td>
+     <td colspan="2" height="30" class="text_1b3b">{REQUEST_TRAD_EXP_1} &nbsp;<a  onClick="window.open('ouvrir_la.php?id_f=70&id_ent={id_tr}&la={LANGUE_PRE}')"  class="link_1a1r">{nom_traducteur} </a>. <a href="traduc_definition" >{G_CLI_HER}</a> {TO_VIEW_DEFINITION}.	</td>
    </tr>
    <tr>
-     <td><br>
+     <td colspan="2"><br>
 	  <table width="790">
 	   <tr align="center" valign="middle">
-	     <td>&nbsp;</td>
+	     <td></td>
 				 <td>  <span id="chat_parte">chat</span> </td>
 		 <td> <img src="images/y_mail.gif" border="0"  onclick="mail_to({id_tr});" title="{MAILS_TO_PARTENAIRE}">&nbsp;&nbsp;<a   onclick="mail_to({id_tr});" class="link_1d1b">{MAILS_TO_PARTENAIRE}</a></td>
 		</tr>
 	   </table>	  </td> 
    </tr>
    <tr>
-     <td height="15"></td>
+     <td colspan="2" height="15"></td>
    </tr>
    <tr valign="middle">
-   <td height="25" background="images/2e_solid.gif">
-   <a onClick="select_all_dtr()">    	 <img src="images/arrow_02.gif" border="0"> {SELECT_ALL} </a> | 
-<a onClick="deselect_all_dtr()">{SELECT_ALL_NO}</a> | 
-<a onClick="update_pay_dtrs(0)">
-{UPDATE_PAYMENT_STATUS}  </a> | 
-<a onClick="pay_tradu_esc()">
-{PAY_TRADU_ESC}  </a> |<a onClick="window.open('account_individual_s1.php')">{G_VIEW} {ACCOUNT_INDIVIDUAL}</a></td>
-   </tr><tr><td  background="images/2e_solid.gif" align="right"> 
-	  {PAGE}&nbsp; 1 &nbsp;<span id="sp_pages"> </span></td>
- </tr>
-   <tr><td height="1">
+   <td width="506" background="images/2e_solid.gif">&nbsp;</td>
+
+ <td width="292" height="25" align="right" background="images/2e_solid.gif">	 
+	 <span class="text_6e">Page 1 </span>
+</td>
+   </tr>
+   <tr><td colspan="2" height="1">
    </td></tr>
-      <tr><td height="1" >
-      <div id="layer_addition"  >       </div>
+      <tr><td colspan="2" height="1" >
+      <div id="layer_addition"  >   	  </div>
 	
    </td></tr>
   </table>
@@ -112,7 +108,7 @@ function init_form() {
   <div class="box_data">
     <div class="box_left">
       <div class="scroll-pane">
-   <table width="650" cellpadding="0" cellspacing="0">   
+        <table width="650" cellpadding="0" cellspacing="0">   
    <tr><td colspan="3" height="1"></td></tr>
    <tr>
      <td colspan="3">
@@ -125,19 +121,17 @@ function init_form() {
   </table>
       </div>
     </div>
-
-<div class="box_right">
-  
-<div id="layer_additionb"  >
+    <div class="box_right">
+ <div id="layer_additionb"  >
    </div>
-      <table cellpadding="0" cellspacing="0" id="add_note0" style="display:none" width="295" >
+          <table cellpadding="0" cellspacing="0" id="add_note0" style="display:none" width="295" >
         <tr>
       <td width="262" height="38" class="text_1a1b">&nbsp;&nbsp;&nbsp;{NEW_ENTRY} {MESS_TO_TR}<br>
-   
+     
        </td> 
     </tr>
     <tr><td>
-<form action="save_note_dtr_s1.php" name="frm_note_dtr" id="frm_note_dtr" target="iframe_data" method="post" >
+   <form action="save_note_dtr_s1.php" name="frm_note_dtr" id="frm_note_dtr" target="iframe_data" method="post" >
        <input type="hidden" name="langue" value="{LANGUE_PRE}">
         <input type="hidden" name="id_dtr" value="">
     <span class="text_1b1x">
@@ -148,16 +142,16 @@ function init_form() {
     </form>  
     </td></tr>
   </table>
-
+    </div>
+  </div>
 </div>
+  <p align="center">{img_language} </p>
  
- </div></div>
-<p align="center">{img_language} </p>
-   {(bottomb)}
+
+  {(bottomb)}
  </div>
  <span id="list_p"  style="visibility:hidden">non</span> 
  <span id="list_u"  style="visibility:hidden">non</span> 
-<span id="sp_temp" ></span> 
    <iframe name="iframe_data" style="width: 340px; height: 100px; display:none;"></iframe>
 </body>
 </html>
