@@ -1,0 +1,102 @@
+<!-- BEGIN: MAIN -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html   {RIGHT_LEFT_ENTRY} >
+<head>
+
+<meta http-equiv='Content-Type' content='text/html; {CHARSET}' />
+<link rel='stylesheet' href='css/style.css' type='text/css'>
+<title> {MY_FAVORITE} </title>
+
+</head>
+<script language="JavaScript" src="ajax.js" type="text/javascript"></script>
+<script language="JavaScript" src="my_favorite.js" type="text/javascript"> </script>
+
+
+<script language="JavaScript" >
+var typ ='{typ}';
+var langue ='{LANGUE_PRE}';
+var vmtf = '{MOVE_TO_FOLD}';
+var gid_dir ='{id_dir}';  // id du repertoire message
+var vps ='{GPS} {G_OFFRE},{COMPANIES}';
+function init_form() {  
+	f =document.frm;
+	sync0();
+	{init_form}
+}
+</script>
+
+<body class="text_1a1d"  onLoad="init_form();" >
+
+ <div id="wrapper">
+<table width='1000' cellpadding='0' cellspacing='0' id="header">
+ <tr>
+  <td>
+    <a href="/"><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/></a><br>
+      <i class="slogan"> {SLOGAN}</i> 
+  </td>
+      <td colspan='2' height='80' valign="middle" align="right">
+       
+             {G_HI} {nom_util}  |  <a href='my_account.php'  >{MY_ACCOUNT}</a> | <a href='sign_out.php'>{SIGN_OUT}</a>
+      <select name='combo_langue' onChange="change_langue(this.value); ">
+        {combo_langue}
+        </select><br>
+          <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a target='_blank' href='FAQ.html'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>   
+          </td>
+ </tr>
+ <tr>
+   <td align='center' width='138'>
+      </td>
+   <td width='240' align='center' >
+      </td>
+   <td align='right' width='490' class='text_1a1x'><img src="images/header_10.jpg" width="803" height="8" alt="">
+        </td>
+ </tr>
+
+</table>
+<p class="clear"></p>
+ <form action="my_favorite.php" name="frm" method="post" class="my_favo">
+
+<div style="text-align:right; margin-bottom:15px;"> <span id="sp_combo_dir2">{OPEN_FOLD}
+  <select name="combo_dir2" class="selection" style="width:222px;" onChange="select_favs(this.value); ">
+      <option value="0"> {OPEN_FOLD}</option>
+      <option>add</option>
+    </select>
+  </span> <div class="clear"></div></div>
+  <div class="heading_fav">
+   <a href='my_favorite.php?typ=1'  {mark1} >{ALL} {MY_FAVORITE} </a>
+  <a href='my_favorite.php?typ=2' {mark2}>{MY_FAVORITE_COM} </a> 
+  <a href='my_favorite.php?typ=3' {mark3}>{MY_FAVORITE_OFFRE} </a> 
+  <div class="clear"></div>
+</div>
+<p class="clear"></p>
+
+<table id="favo_list" width="1000" border="0" cellpadding="0" cellspacing="0">
+  <tr class="heading_fav" style="height:45px;">
+    <td width="40">
+      <input name="ch_box_select_fav_all" type="checkbox" value="" onChange="select_all_favb()" onClick="select_all_favb()"  >
+      </td>
+    <td width="220">
+     <span id="sp_combo_dir">
+<select name="combo_dir" class="selection" style="width:215px" onChange="move_fav(this.value); ">
+  <option value="0"> {MOVE_TO_FOLD}</option>
+  <option>add</option>
+  <option value="--"  disabled="disabled"> ------------ </option>
+  <option value="**"> {ADD_FOLD_M} </option>
+</select>
+</span></td>
+    <td>
+     <input name="bdelete" type="button" value="{DELETE}" onClick="del_favs(1)"> |
+<input name="bremove2" type="button" value="{REMOVE_FROM_DIR}" onClick="del_favs(2)"></td>
+  </tr>
+</table>
+
+<div id="my_favorite">&nbsp;</div>
+</form>
+<p></p>
+{(bottom)} 
+
+</div>
+ <span id="sp_temp" style="visibility:hidden; font-size:2px "  >{sp_temp}</span>
+</body>
+</html>
+<!-- END: MAIN -->

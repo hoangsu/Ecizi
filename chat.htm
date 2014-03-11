@@ -1,0 +1,86 @@
+<!-- BEGIN: MAIN -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html   {RIGHT_LEFT_ENTRY} >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Chat</title>
+<LINK href="css/style.css" type=text/css rel=stylesheet>
+</head>
+<script language="JavaScript" src="ajax.js" type="text/javascript"> </script>
+<script language="JavaScript" src="chat.js" type="text/javascript"> </script>
+<script language="JavaScript" >
+var vinvite_chat ='{INVITE_A_CHAT}';
+var q_del_chat='{Q_DEL_CHAT}';
+var vcomme ='{COMME}';
+var vtraducteur ='{TRADUCTEUR}';
+var id_chat='{id_chat}';
+var id_u ='{id_u}';
+var id_p ='{id_p}';
+var langue ='{LANGUE_PRE}';
+var vsel_b2b = '{INVITE_A_CHAT} {G_PARTN_B2B}';
+var vsel_trad = '{INVITE_A_CHAT} {MON_TRADUCTEUR}';
+var lb_add_contact='{ADD_CONTACT}';
+
+function init_form() {  
+	f=document.frm;  
+	{init_form}
+	sync0();
+}
+
+
+</script>
+<body  onLoad="init_form()" >
+<div id="wrapper">
+
+<form name="frm">
+<h1 class="title_nobg">{A1}</h1>
+<span>{nom_chat} </span>  <span id="add_contact" > </span>
+ <div id="chat_room">  </div>
+</form>
+
+<form name="frm2"  action="chat_text2.php" id="frm_org" target="iframe_data" method="post" onSubmit="return check_send();">
+ 	<input type="hidden" name="id_chat" value="{id_chat}">
+    <input type="hidden" name="id_u" value="{id_u}">
+	<input type="hidden" name="langue" value="{langue}"> 
+	<input type="hidden" name="str_chat" value=""> 
+    <input type="hidden" name="id_s1" value="{id_s1}">
+    <input type="hidden" name="ip_s1" value="{ip_s1}">
+
+<div class="type_text">
+  <p style="color:#3989C9">Type your text</p>
+  <input style="height:60px; width:815px"  type="text" name="text_env"  size="100" onKeyPress="check_key()"  onChange="chat_text2()" >
+ <br>
+ <!--<strong>    {nom_user}</strong>-->
+    <input name="button" class="org_btn" type="button"  value="{SEND}" onClick="chat_text2()" >
+</div>
+<div class="send_text">
+ <select style="width:265px" class="selection"><option>INVITE_A_CHAT</option></select>
+  <a class="nut org_btn" onClick="important_chat()"><strong>  {MARQUER_CHAT} </strong></a> 
+  <a class="nut org_btn" onClick="effa_chat()"><strong>  {EFFA_CHAT} </strong></a>
+
+</div>
+
+ <p>
+    <div id="partenaire_room" style="border:thin" >  </div>
+   <span id="partenaires_trad" style="border:thin" > </span>
+   <span id="partenaires_b2b" style="border:thin" >  </span>
+  <br>
+      <strong>{LIST_UTILS_CHAT}</strong>
+  <span id="chat_utils" style="visibility:hidden">  {chat_utils}  </span>
+  <span id="chat_utilsb"></span>
+  </p> 
+
+  <img src="images/top2.gif" border="0" align="right"   onClick="go_top()" >
+ 
+</form>
+ <span id="sp_temp"  style="visibility:hidden; font-size:2px">non</span> 
+ <span id="repond"   style="visibility:hidden; font-size:2px">non</span> 
+<span id="repond2"   style="visibility:hidden; font-size:2px">non</span> 
+<span id="repond3"   style="visibility:hidden; font-size:2px"></span>  
+<span id="repond4"   style="visibility:hidden; font-size:2px"></span>  
+<span id="repond_partenaire"   style="visibility:hidden; font-size:2px">{list_partner}</span> 
+<iframe name="iframe_data"   style="width: 340px; height: 20px;  display:none  "  >non</iframe>
+</div>
+</body>
+</html>
+<!-- END: MAIN -->

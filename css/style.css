@@ -18,7 +18,7 @@ img {border:none;}
 /************** #wrapper *************/
 #wrapper {
 	margin: 0 auto;
-	width: 1010px;
+	width: 1000px;
 	display:block;
 }
 .clear {
@@ -909,7 +909,7 @@ box-shadow: #666 0px 2px 3px;behavior: url(PIE.htc);}
 .line_submit {margin-bottom: 0}
 .line_submit .blue_btn_l {margin-left: 437px;}
 .offre input[type="text"] {border:1px solid #777; height: 20px; line-height: 20px; background:#fff; margin:0;}
-.selection{border:1px solid #777; background: #eef9fd; height: 24px; }
+.selection{border:1px solid #a4a5a9; background: #e6edf7; height: 24px; }
 .divcombo_categories select{border:1px solid #777; width:244px; height: 150px;  padding:2px; margin-left: 10px }
 .offre textarea {border: 1px solid #666;}
 .offre ::-webkit-file-upload-button {background: url(../images/blue_btn_l.jpg) no-repeat 0 0;border: none;cursor: pointer;height: 28px;width: 114px;color: #fff;text-align: center;padding: 3px 0 12px;}
@@ -986,6 +986,29 @@ a {cursor: pointer;}
 #translate_content .box_data { overflow: hidden;}
 #header tr td {white-space: nowrap;}
 #footer .left a.link_1b1x, #footer .left span.nw {white-space: nowrap; }
-/*#translate_content > div > div.box_left > div > table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > table > tbody > tr > td > a:nth-child(3) {
-display: none;
-}*/
+
+/*------------------------------Upgrade Member, My Favorite, Chat------------------------- */
+.upgrade a.link_1a3b.blue_btn {padding:6px 27px; font-size: 14px}
+.upgrade #upgrd_table tbody tr td {border-left:1px solid #444; background: url(../images/dotted.jpg) repeat-x 0 bottom;}
+.upgrade #upgrd_table thead tr td{border-bottom: 1px solid #444}
+.upgrade #upgrd_table tbody tr.last td{border-bottom:1px solid #444; background: none}
+.upgrade #upgrd_table tbody tr td.last{border-right: 1px solid #444}
+.heading_fav { background: #e6edf7; }
+.heading_fav a{height: 40px; display: inline-block; float: left; background:url(../images/spec.png) no-repeat right top #799bcb;line-height: 40px;  font-size: 18px; color:#fff; text-align: center; min-width:190px; text-transform: uppercase;}
+#favo_list .heading_fav input{background: none; border:none; cursor: pointer; font-weight: bold; font-size: 14px;}
+#my_favorite .fav_tu {vertical-align: top; width:100%; background: url(../images/dotted.jpg) repeat-x 0 bottom; height: 121px; padding:13px 5px; color:#276493;}
+#my_favorite .fav_tu input.fav_tu1 {margin-right:23px; vertical-align: top;}
+#my_favorite .fav_tu .fav_tu2 {vertical-align: top; display: inline-block;}
+#my_favorite .fav_tu .fav_tu2 img.fav_tu3 {margin-right: 100px; max-width: 120px; border:1px solid #ccc;border-radius: 10px; -webkit-border-radius: 10px;
+-moz-border-radius: 10px; }
+#my_favorite .fav_tu .fav_tu2 img.fav_tu4 {vertical-align: top;}
+#chat_room {border:1px solid #ccc; overflow-y:auto; height: 334px;width:815px; margin:15px 0 30px 50px;}
+.type_text {margin-left: 50px;  background: url(../images/dotted.jpg) repeat-x 0 bottom; padding-bottom: 30px; width:815px;}
+.org_btn {border:none; cursor: pointer; color: #fff;text-align: center; height: 26px; line-height: 18px\9; background-image:none; 
+background-color: #779bca; padding:5px 7px; padding:5px\9; width:auto; white-space: nowrap; border-radius: 3px;-webkit-border-radius: 3px;
+-moz-border-radius: 3px; }
+.type_text .org_btn {padding:5px 15px; margin-top: 10px;}
+.send_text {padding-top: 20px; width:815px; margin-left: 50px;}
+.send_text .selection {height: 30px;}
+.send_text .org_btn {margin-left: 10px;  text-align: center; width:188px; display: inline-block; height: 20px;  line-height: 22px;}
+.send_text .org_btn:hover {color: #f89820;}

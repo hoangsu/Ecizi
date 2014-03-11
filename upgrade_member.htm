@@ -1,0 +1,178 @@
+﻿<!-- BEGIN: MAIN -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  {RIGHT_LEFT_ENTRY} >
+<head runat="server">
+<title>{UPGRAD_MEM}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+<script language="JavaScript" src="ajax.js" type="text/javascript"> </script>
+<script language="JavaScript" src="upgrade_member.js" type="text/javascript"> </script>
+<script language="JavaScript" src="lib_gen.js" type="text/javascript"> </script>
+<script language="JavaScript" >
+var langue='{LANGUE_PRE}';
+var id_u ='{id_u}';
+var id_p ='{id_p}';
+var prix1='{prix1}';
+var prix2='{prix2}';
+var duree1= '{duree1}';
+var duree2= '{duree2}';
+
+
+function init_form() {  
+	sync0();
+}
+</script>
+<body bgcolor="#FFFFFF"  onLoad="init_form();">
+<div id="wrapper">
+   <div id="heading">
+    <div class="box_left">
+      <div id="logo"><img src='images/logo.png'  border='0'   onClick="window.open('ouvrirh.php')"></div>
+      <div class="slogan">{SLOGAN}</div>
+    </div>
+    <div class="box_right">
+     {G_HI} <span id="span_user_info">  </span> | <a href='sign_out.php'>{SIGN_OUT}</a> |
+          <select name='combo_langue' class="selection" onChange="change_langue(this.value); ">
+         {combo_langue}
+          </select>
+          <br>
+           <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">|{G_EMAI_US}</a> | <a target='_blank' href='FAQ.html'>{G_FAQ}</a>|    <a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a> 
+    </div>  
+  </div>
+
+  <div class="clear"></div>
+
+    <div style="width:100%;clear:both;text-align:left;"> <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a> &raquo; <a href="my_account.php">{MY_ACCOUNT}</a> &raquo; {UPGRAD_MEM} </div>
+    <p class="text_1f1d title_nobg"><b>{UPGRAD_MEM}</b></p>
+  <div class="upgrade">
+      <div> <a href="#" class="link_1d2b" style="line-height:20px;"> {UPGRADE_MEMBER_A} </a><br />
+        <span class="text_1a1b">{UPGRADE_MEMBER_B}</span>  
+        <br />
+      </div>
+      <br />
+      <div >
+          <a href="sais_ent4_prepaid.php"  class="link_1a3b blue_btn" ><b>{UPGR_PREP}</b></a>
+      </div>
+      <p>&nbsp;</p>
+   <div> 
+	  <form  action="sais_ent4.php" name="frm" method="post"  >
+        <input type="hidden" name="tmembre" value="{tmembre}">
+        <input type="hidden" name="prix" value="0">
+        <input type="hidden" name="duree" value="0">		
+<table id="upgrd_table" width="1000" height="541" border="0" cellpadding="0" cellspacing="0">
+  <thead>
+    <tr>
+    <td width="550" align="right">
+      <p style="color:#3597d8; font-size:14px;">{SELECT_MEM}</p></td>
+    <td width="150" align="center">
+      <input name="radio_mem_typ" id="radio_mem_typ_1" type="radio"   value="1"  onchange="change_tmembre(1)"  disabled="disabled"/><br />
+            </td>
+    <td width="150" align="center">
+     <input name="radio_mem_typ" id="radio_mem_typ_2" type="radio"   value="2" onchange="change_tmembre(2)"/><br />
+           
+          </td>
+    <td width="150" align="center">
+      <input name="radio_mem_typ" id="radio_mem_typ_3" type="radio"   value="3"  onchange="change_tmembre(3)"/><br />
+           </td>
+         </tr>
+  </thead>
+  <tbody>
+  <tr valign="top">
+    <td>
+      <img src="images/spacer.gif" width="549" height="53" alt=""></td>
+    <td align="center">
+      {FREE} </td>
+    <td align="center">
+      <b> <span class="text_1a1b" style="line-height:18px;">{COMMI_MEM}</span></br><span class="text_1a2g" style="line-height:18px;">{duree1} {G_MOIS} /$US {prix1}</span></b></td>
+    <td align="center" class="last">
+     <b> <span class="text_1a1b" style="line-height:18px;">{COMMI_MEM}
+            </span><br>{duree2} {G_MOIS} / $US {prix2}</b></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="images/spacer.gif" width="549" height="70" alt=""></td>
+    <td>
+      <img src="images/spacer.gif" width="149" height="70" alt=""></td>
+    <td>
+      <img src="images/spacer.gif" width="150" height="70" alt=""></td>
+    <td class="last">
+      <img src="images/spacer.gif" width="152" height="70" alt=""></td>
+  </tr>
+  <tr>
+    <td>
+       <p><span class="text_1a1b"  style="line-height:18px;padding-left:10px;">{VIEW_GOLD_MEM_B}</span></p></td>
+    <td align="center">
+      <img src="images/check.png" alt="" /></td>
+    <td align="center">
+     <img src="images/check.png" alt="" /></td>
+    <td align="center" class="last">
+      <img src="images/check.png" alt="" /></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="images/spacer.gif" width="549" height="76" alt=""></td>
+    <td>
+      <img src="images/spacer.gif" width="149" height="76" alt=""></td>
+    <td>
+      <img src="images/spacer.gif" width="150" height="76" alt=""></td>
+    <td class="last">
+      <img src="images/spacer.gif" width="152" height="76" alt=""></td>
+  </tr>
+  <tr>
+    <td>
+     <p><span class="text_1a1b" style="line-height:18px;padding-left:10px;">{TRADUCTION_PROMO_GOLD_MEM}</span></p></td>
+    <td align="center">
+      <img src="images/check.png" alt="" /></td>
+    <td align="center">
+      <img src="images/check.png" alt="" /></td>
+    <td align="center" class="last">
+      <img src="images/check.png" alt="" /></td>
+  </tr>
+  <tr class="last">
+    <td>
+      <span class="text_1a1b" style="line-height:18px;padding-left:10px;">{ESCRO_PERMIT}</span></td>
+    <td align="center">
+      <img src="images/check.png" alt="" /></td>
+    <td align="center">
+      <img src="images/check.png" alt="" /></td>
+    <td align="center" class="last">
+      <img src="images/check.png" alt="" /></td>
+  </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+    <td align="right" >
+      <br>
+      <span class="text_1a1b" style="line-height:18px;color:#3597d8; font-size:14px;">&nbsp;{SELECT_MEM}</span> <br><br>
+<input name="submit" style="padding:5px 15px" type="submit" class="blue_btn" value="{NEXT}" onclick="document.frm.submit();" />
+    </td>
+    <td align="center">
+     <input  name="radio_mem_typb" id="radio_mem_typ_b1"  value="1" type="radio"  onchange="change_tmembre(1)" disabled="disabled"/>
+            <br><span class="text_1a1b" style="line-height:18px;">{FREE} </span> </td>
+    <td align="center">
+       <input  name="radio_mem_typb" id="radio_mem_typ_b2"  value="2" type="radio"  onchange="change_tmembre(2)"/>
+          <br>  {COMMI_MEM}</td>
+    <td align="center">
+     <input  name="radio_mem_typb" id="radio_mem_typ_b3"  value="3" type="radio"  onchange="change_tmembre(3)" />
+          <br>  {COMMI_MEM} </td>
+        </tr>
+  </tfoot>
+
+</table>
+
+		</form>
+      </div>
+      <br><br>
+      <div style="clear:both; text-align:center">
+	  ({G_NEW_LANG2})<br>
+         {img_language}  
+	  </div>
+
+    
+  </div>
+  {(bottom)}
+</div>
+
+</body>
+</html>
+<!-- END: MAIN -->
