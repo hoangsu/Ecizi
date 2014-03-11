@@ -994,15 +994,15 @@ a {cursor: pointer;}
 .upgrade #upgrd_table tbody tr.last td{border-bottom:1px solid #444; background: none}
 .upgrade #upgrd_table tbody tr td.last{border-right: 1px solid #444}
 .heading_fav { background: #e6edf7; }
-.heading_fav a{height: 40px; display: inline-block; float: left; background:url(../images/spec.png) no-repeat right top #799bcb;line-height: 40px;  font-size: 18px; color:#fff; text-align: center; min-width:190px; text-transform: uppercase;}
+.heading_fav a{height: 40px; display: inline-block; float: left; background:url(../images/spec.png) no-repeat right top #799bcb;line-height: 40px !important;  font-size: 18px !important; color:#fff !important; text-align: center; min-width:190px; padding:0 30px;}
 #favo_list .heading_fav input{background: none; border:none; cursor: pointer; font-weight: bold; font-size: 14px;}
-#my_favorite .fav_tu {vertical-align: top; width:100%; background: url(../images/dotted.jpg) repeat-x 0 bottom; height: 121px; padding:13px 5px; color:#276493;}
+#my_favorite .fav_tu {vertical-align: top; width:100%; background: url(../images/dotted.jpg) repeat-x 0 bottom; padding:13px 5px; color:#276493;}
 #my_favorite .fav_tu input.fav_tu1 {margin-right:23px; vertical-align: top;}
 #my_favorite .fav_tu .fav_tu2 {vertical-align: top; display: inline-block;}
 #my_favorite .fav_tu .fav_tu2 img.fav_tu3 {margin-right: 100px; max-width: 120px; border:1px solid #ccc;border-radius: 10px; -webkit-border-radius: 10px;
 -moz-border-radius: 10px; }
 #my_favorite .fav_tu .fav_tu2 img.fav_tu4 {vertical-align: top;}
-#chat_room {border:1px solid #ccc; overflow-y:auto; height: 334px;width:815px; margin:15px 0 30px 50px;}
+.chat_page #chat_room {border:1px solid #ccc; overflow-y:auto; height: 334px;width:815px; margin:15px 0 30px 50px;}
 .type_text {margin-left: 50px;  background: url(../images/dotted.jpg) repeat-x 0 bottom; padding-bottom: 30px; width:815px;}
 .org_btn {border:none; cursor: pointer; color: #fff;text-align: center; height: 26px; line-height: 18px\9; background-image:none; 
 background-color: #779bca; padding:5px 7px; padding:5px\9; width:auto; white-space: nowrap; border-radius: 3px;-webkit-border-radius: 3px;
@@ -1012,3 +1012,4 @@ background-color: #779bca; padding:5px 7px; padding:5px\9; width:auto; white-spa
 .send_text .selection {height: 30px;}
 .send_text .org_btn {margin-left: 10px;  text-align: center; width:188px; display: inline-block; height: 20px;  line-height: 22px;}
 .send_text .org_btn:hover {color: #f89820;}
+#my_favorite > br {display: none}
