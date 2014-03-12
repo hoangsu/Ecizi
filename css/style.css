@@ -989,7 +989,8 @@ a {cursor: pointer;}
 
 /*------------------------------Upgrade Member, My Favorite, Chat------------------------- */
 .upgrade a.link_1a3b.blue_btn {padding:6px 27px; font-size: 14px}
-.upgrade #upgrd_table tbody tr td {border-left:1px solid #444; background: url(../images/dotted.jpg) repeat-x 0 bottom;}
+.upgrade #upgrd_table tbody tr td {border-left:1px solid #444; background: url(../images/dotted.jpg) repeat-x 0 bottom; text-align: center }
+#upgrd_table tbody tr td:first-child {padding-left: 10px; text-align: left;}
 .upgrade #upgrd_table thead tr td{border-bottom: 1px solid #444}
 .upgrade #upgrd_table tbody tr.last td{border-bottom:1px solid #444; background: none}
 .upgrade #upgrd_table tbody tr td.last{border-right: 1px solid #444}
@@ -1013,3 +1014,4 @@ background-color: #779bca; padding:5px 7px; padding:5px\9; width:auto; white-spa
 .send_text .org_btn {margin-left: 10px;  text-align: center; width:188px; display: inline-block; height: 20px;  line-height: 22px;}
 .send_text .org_btn:hover {color: #f89820;}
 #my_favorite > br {display: none}
+.message_page #div_parternaire select {width:500px; height:25px;}

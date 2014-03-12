@@ -77,74 +77,75 @@ function init_form() {
          </tr>
   </thead>
   <tbody>
-  <tr valign="top">
+  <tr>
     <td>
       <img src="images/spacer.gif" width="549" height="53" alt=""></td>
     <td align="center">
       {FREE} </td>
     <td align="center">
-      <b> <span class="text_1a1b" style="line-height:18px;">{COMMI_MEM}</span></br><span class="text_1a2g" style="line-height:18px;">{duree1} {G_MOIS} /$US {prix1}</span></b></td>
+      <b> <span class="text_1a1b" style="line-height:18px;">{COMMI_MEM}</span></br><span class="text_1a2g" style="line-height:18px;">{duree1} {G_MOIS} /US$ {prix1}</span></b></td>
     <td align="center" class="last">
      <b> <span class="text_1a1b" style="line-height:18px;">{COMMI_MEM}
-            </span><br>{duree2} {G_MOIS} / $US {prix2}</b></td>
+            </span><br>{duree2} {G_MOIS} / US$ {prix2}</b></td>
   </tr>
   <tr>
     <td>
-      <img src="images/spacer.gif" width="549" height="70" alt=""></td>
+     <p><span class="text_1a1b">{VIEW_GOLD_MEM_B}</span></p></td> 
+    <td align="center">
+      <img src="images/no.png"></td>
     <td>
-      <img src="images/spacer.gif" width="149" height="70" alt=""></td>
+       <img src="images/yes.png" alt="" /></td>
+    <td class="last">
+       <img src="images/yes.png" alt="" /></td>
+  </tr>
+  <tr>
     <td>
+     <p><span>{UPGRADE_MEMBER_C}</span></p>
+     </td>
+    <td align="center">
       <img src="images/spacer.gif" width="150" height="70" alt=""></td>
-    <td class="last">
-      <img src="images/spacer.gif" width="152" height="70" alt=""></td>
-  </tr>
-  <tr>
-    <td>
-       <p><span class="text_1a1b"  style="line-height:18px;padding-left:10px;">{VIEW_GOLD_MEM_B}</span></p></td>
     <td align="center">
-      <img src="images/check.png" alt="" /></td>
-    <td align="center">
-     <img src="images/check.png" alt="" /></td>
+     <img src="images/yes.png" alt="" /></td>
     <td align="center" class="last">
-      <img src="images/check.png" alt="" /></td>
+      <img src="images/yes.png" alt="" /></td>
   </tr>
   <tr>
     <td>
-      <img src="images/spacer.gif" width="549" height="76" alt=""></td>
+      <p><span>{UPGRADE_MEMBER_EXP_A}</span></p></td>
+   <td align="center">
+      <img src="images/no.png"></td>
     <td>
-      <img src="images/spacer.gif" width="149" height="76" alt=""></td>
-    <td>
-      <img src="images/spacer.gif" width="150" height="76" alt=""></td>
+      <img src="images/yes.png" alt="" /></td>
     <td class="last">
-      <img src="images/spacer.gif" width="152" height="76" alt=""></td>
+      <img src="images/yes.png" alt="" /></td>
   </tr>
   <tr>
     <td>
-     <p><span class="text_1a1b" style="line-height:18px;padding-left:10px;">{TRADUCTION_PROMO_GOLD_MEM}</span></p></td>
+     <p><span class="text_1a1b">{TRADUCTION_PROMO_GOLD_MEM}</span></p></td>
     <td align="center">
-      <img src="images/check.png" alt="" /></td>
-    <td align="center">
-      <img src="images/check.png" alt="" /></td>
+      <img src="images/no.png"></td>
+    <td>
+    <img src="images/spacer.gif" width="150" height="70" alt=""></td>
     <td align="center" class="last">
-      <img src="images/check.png" alt="" /></td>
+      <img src="images/yes.png" alt="" /></td>
   </tr>
   <tr class="last">
     <td>
-      <span class="text_1a1b" style="line-height:18px;padding-left:10px;">{ESCRO_PERMIT}</span></td>
+      <p><span class="text_1a1b" >{VIEW_GOLD_MEM_A}</span></p></td>
     <td align="center">
-      <img src="images/check.png" alt="" /></td>
-    <td align="center">
-      <img src="images/check.png" alt="" /></td>
+      <img src="images/no.png"></td>
+    <td>
+      <img src="images/yes.png" alt="" /></td>
     <td align="center" class="last">
-      <img src="images/check.png" alt="" /></td>
+      <img src="images/yes.png" alt="" /></td>
   </tr>
   </tbody>
   <tfoot>
     <tr>
     <td align="right" >
       <br>
-      <span class="text_1a1b" style="line-height:18px;color:#3597d8; font-size:14px;">&nbsp;{SELECT_MEM}</span> <br><br>
-<input name="submit" style="padding:5px 15px" type="submit" class="blue_btn" value="{NEXT}" onclick="document.frm.submit();" />
+      <span class="text_1a1b" style="line-height:18px;color:#3597d8; font-size:14px;">&nbsp;{SELECT_MEM}</span> <br><br></br>
+<input name="submit" style="padding:5px 20px;" type="submit" class="blue_btn" value="{NEXT}" onclick="document.frm.submit();" />
     </td>
     <td align="center">
      <input  name="radio_mem_typb" id="radio_mem_typ_b1"  value="1" type="radio"  onchange="change_tmembre(1)" disabled="disabled"/>

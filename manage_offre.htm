@@ -1,0 +1,189 @@
+<!-- BEGIN: MAIN -->
+<html   {RIGHT_LEFT_ENTRY} >
+<head>
+
+<meta http-equiv='Content-Type' content='text/html; {CHARSET}' />
+<link rel='stylesheet' href='styles.css' type='text/css'>
+<title> {MANAGE_OFFRE} </title>
+
+</head>
+<script language="JavaScript" >
+var vlangue='{LANGUE_PRE}';
+var id_u='{id_u}';
+var list_of="{list_of}";
+var t_offre ='{t_offre}';
+var vt1= '{SELL_LEAD}';
+var vt2= '{BUY_LEAD}';
+var vt3= '{COOP}';
+var vnon_repond = '{NON_REPOND}';
+var voffer_to_veri ='{OFFER_TO_VERIFY}';
+var voffer_modi_to_veri = '{OFFER_MODIFIED_TO_VERIFY}';
+var voffer_non_approu= '{OFFER_NON_APPROUVED}';
+var voffer_non_app_modi= '{OFFER_NON_APP_MODI}';
+var voffer_is_ban = '{OFFER_NON_APPROUVED_ALL}';
+var head_table= '';
+var vstat_viewer= '{STAT_VIEWER}';
+
+function init_form() {  
+	f=document.frm;  
+	analyse_head_table();
+	sync0();
+}
+
+</script>
+
+<script language="JavaScript" src="ajax.js" type="text/javascript"></script>
+<script language="JavaScript" src="saisir.js" type="text/javascript"></script>
+<script language="JavaScript" src="manage_offre.js" type="text/javascript"> </script>
+
+<body   onLoad="init_form()">
+ <div align="center">
+ <table width='887' cellpadding='0' cellspacing='0'>
+ <tr>
+  <td><img src='images/logo.png'  border='0'   onClick="window.open('ouvrirh.php')">  </td>
+      <td colspan='3' height='80' valign="middle"><p align='left' style='color:#CCCCCC; font:20px Arial;' ><b> {SLOGAN} </b></p></td>
+ </tr>
+ <tr>
+   <td align='center' width='138'>
+     <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a>   </td>
+   <td width='120' align='center' >
+     <a href='ouvrir.php?id_f=2&categorie=00'  >{OFFER_BOARD}</a>   </td>
+   <td width='120' align='center' >
+     <a href='my_account.php'  >{MY_ACCOUNT}</a>   </td>
+   <td align='right' width='474' background='images/line.gif' class='text_1a1x'>
+        <form name="combolang" action="manage_offre.php"  method="post">
+		      <input type="hidden" name="t_offre" value="{t_offre}">
+                {G_HI} {nom_util} | <a href='sign_out.php'>{SIGN_OUT}</a> |
+      <select name='combo_langue' onChange=" document.combolang.submit();">
+    {combo_langue}
+      </select>   </form>    </td>
+ </tr>
+ <tr>
+   <td height='24' colspan='4' align='right' class='text_1b1x'>
+      <a href='#'>{G_EMAI_US}</a> | <a href='#'>{G_FAQ}</a> | <a href='#'>{G_PARTN}</a>  | <img src='images/chat.gif' border='0'> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>   </td>
+ </tr>
+</table>
+ 
+  <table width="922" cellpadding="0" cellspacing="0">
+    <tr>
+	  <td width="10" rowspan="6"></td>
+		  <td width="910" height="20">
+	       <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a> &raquo; <a href="my_account.php">{MY_ACCOUNT}</a> &raquo;   {MANAGE_OFFRE}</td>
+   </tr>
+   <tr><td height="50"><span class="text_1f1d"> {MANAGE_OFFRE} : </span>
+   		<table> <tr>		 <td width="130" height="25" ><div id='t1' onClick="change_t_offre(1,0);"> <span class="text_1a2w"  style="background:#0099FF" > {SELL_LEAD}</span> </div></td>
+		 <td width="130" ><div id='t2' onClick="change_t_offre(2,0);"> <span class="link_1a1b" >{BUY_LEAD}</span> </div> </td>
+		 <td width="130"><div id='t3' onClick="change_t_offre(3,0);"> <span class="link_1a1b" > {COOP} </span> </div> </td>
+</tr></table>
+
+   </td>
+   </tr>
+   <tr><td valign="top">
+     <span class="text_1b3b">{MANAGER_OFFRE_A}</span></td>
+   </tr>
+   <tr><td height="20" ></td></tr>
+   <tr>
+    <td>
+      <form name="frm_search" method="post">
+	<table width="907" cellpadding="0" bgcolor="#ffba00">
+      <tr valign="bottom">
+        <td width="19" height="21">&nbsp;</td>
+        <td width="256" height="21"> {CHERCHER} {MOT}</td>
+        <td width="28" height="21">&nbsp;</td>
+        <td width="301" height="21">&nbsp;</td>
+        <td width="289" height="30" rowspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input name="mot"  type="text" style="border-style:inset; border-width:2px" size="30"></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr valign="top">
+        <td>&nbsp;</td>
+        <td class="text_1b1x">{KEYWORD_LANGUE}</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+      <tr valign="bottom">
+        <td height="24">&nbsp;</td>
+        <td height="24">{VALID} {FROM} </td>
+        <td height="24">&nbsp;</td>
+        <td height="24">{TO} </td>
+        <td height="24">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input name="ojourcd" type="text" id="ojourcd" style="border-style:inset; border-width:2px" value="" size="3" maxlength="2" onChange="verif_j('jour')" >
+/
+  <input name="ojourcm" type="text" id="ojourcm" style="border-style:inset; border-width:2px" value="" size="3" maxlength="2"  onChange="verif_j('mois')" >
+/
+<input name="ojourcy" type="text" id="ojourcy" style="border-style:inset; border-width:2px" value="" size="5" maxlength="4"  onChange="verif_j('anne')" > </td>
+        <td>&nbsp;</td>
+        <td><input name="ojourtd" type="text" id="ojourtd" style="border-style:inset; border-width:2px" value="" size="3" maxlength="2" onChange="verif_j2('jour')" >
+/
+  <input name="ojourtm" type="text" id="ojourtm" style="border-style:inset; border-width:2px" value="" size="3" maxlength="2"  onChange="verif_j2('mois')" >
+/
+<input name="ojourty" type="text" id="ojourty" style="border-style:inset; border-width:2px" value="" size="5" maxlength="4"  onChange="verif_j2('anne')" > ({DATE_FORMAT2})</td>
+        <td><input name="button" type="button" style="border-style:outset; background-color:#0099FF; font-weight:bold; color:#FFFFFF;" value="{CHERCHER}" onClick="f_cherche_of()"></td>
+      </tr>
+      <tr>
+        <td height="14">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+	</form>	</td>
+   </tr>
+   <tr><td height="9" ></td>
+   </tr>
+   <tr>
+    <td colspan="2">
+	  <table cellpadding="0" cellspacing="0"><tr align="center" valign="bottom">
+	    <td width="325"><span onClick="close_off()">{DELETE} {G_OFFRE}</span></td>
+	    <td width="227"><span onClick="find_close_off()">{FIND_DEL_OFFRE}</span></td>
+	    <td width="246">{SORT_BY} &nbsp; &nbsp; <select name="select_sort" onChange="view_offreb(this.value)">
+	      <option value='4'  selected="selected"> {T_OJOURC}</option>
+	      <option value='3'  > {T_TITRE}</option>
+	      <option value='5'  > {T_OJOURT}</option>
+	      <option value='1'  > {STATUS}</option>
+	    </select>	      </td>
+	  </tr></table>	</td>
+   </tr>
+   <tr><td colspan="2" height="15" ></td></tr>
+   
+   <tr>
+     <td colspan="2" align="center" valign="bottom">
+ 	<div id="div_of">
+	 <table width="864" cellpadding="0" cellspacing="0" bgcolor="#e6edf6">
+	   <colgroup span="5" style="padding:5" align="center"></colgroup>
+       <tr align="center" bgcolor="#779bca" class="bor_all2">
+         <th width="15" height="40" scope="col"></th>
+		 <th width="96" height="40" scope="col"></th>
+         <th width="346" height="40" scope="col">{T_TITRE}</th>
+         <th width="83" height="40" scope="col">{STATUS}</th>
+          <th width="96" height="40" scope="col">  {STAT_VIEWER} </th>
+         <th width="121" height="40" scope="col">{T_OJOURC}<br>  
+         {DATE_FORMAT2}</th>
+         <th width="105" height="40" scope="col">{T_OJOURT} <br>
+           {DATE_FORMAT2}</th>
+       </tr>
+	  </table>
+	  </div>	  </td>
+   </tr>
+   <tr><td colspan="2" height="30" ></td></tr>
+   <tr>
+	  <td colspan="2" height="20">
+
+{G_NEW_LANG2} {img_language}		 </td>
+	</tr>
+  </table>
+  {(bottomb)}
+</div>
+ <span id="sp_list_offres"  style="visibility:hidden; font-size:2px">not</span>
+<span id="sp_temp"   style="visibility:hidden; font-size:2px">not</span>
+</body>
+</html>
+<!-- END: MAIN -->

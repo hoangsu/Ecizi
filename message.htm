@@ -1,0 +1,190 @@
+<!-- BEGIN: MAIN -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  {RIGHT_LEFT_ENTRY} >
+<html   {RIGHT_LEFT_ENTRY} >
+<head>
+
+<meta http-equiv='Content-Type' content='text/html; {CHARSET}' />
+<link rel='stylesheet' href='css/style.css' type='text/css'>
+<title> {SEND} {MESSAGE} </title>
+
+</head>
+<script language="JavaScript" src="ajax.js" type="text/javascript"> </script>
+<script language="JavaScript" src="message.js" type="text/javascript"> </script>
+<script language="JavaScript" src="message2.js" type="text/javascript"> </script>
+<script language="JavaScript" >
+var vcomme ='{COMME}';
+var vid ='{id}';
+var vid_r ='{id_r}';
+var vid_rm ='{id_r}';
+var vlangue ='{langue}';
+var vparte = '{G_PARTNER}';
+var vgps = '{GPS}';
+var vtyp = '{typ}';
+var vreply = '{REPLY}';
+var vforward = '{FORWARD}';
+var vnon_repond = '{NON_REPOND}';
+var vlfichier='{mfichier}';
+var vcyc=2600;
+var lb_add_contact = '{ADD_CONTACT}';
+var lb_remove_contact = '{REMOVE_CONTACT}';
+
+function init_form() {  
+	sync0();
+	{init_ini};
+}
+
+</script>
+<body  onLoad="init_form();" >
+
+<div id="wrapper" class="message_page offre">
+<table width='1000' cellpadding='0' cellspacing='0' id="header">
+ <tr>
+  <td>
+    <a href="/"><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/></a><br>
+      <i class="slogan"> {SLOGAN}</i> 
+  </td>
+      <td colspan='2' height='80' valign="middle" align="right">
+      
+              {G_HI}  <span id="span_user_info">  </span> | <a href='sign_out.php'>{SIGN_OUT}</a> 
+   <select name='combo_langue' class="selection" onChange="change_langue(this.value); ">
+		    {combo_langue}
+        </select>
+     <br />   
+          <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a target='_blank' href='FAQ.html'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>   
+          </td>
+ </tr>
+ <tr>
+   <td align='center' width='138'>
+      </td>
+   <td width='240' align='center' >
+      </td>
+   <td align='right' width='490' class='text_1a1x'><img src="images/header_10.jpg" width="803" height="8" alt="">
+        </td>
+ </tr>
+
+</table>
+<p></p>
+
+<table width="800" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="60" class="text_1b1b"><span class="text_1f1d"> {SEND} {MESSAGE} </span><br>
+      (<span class="text_1a2r">*</span>) {G_REQUI_FIEL}</td>
+  </tr>
+  </table>
+<form name="frm" action="message.php" method="post" >
+  <input type="hidden" name="sav" value="0">
+   <input type="hidden" name="sav_temp" value="0">
+   <input type="hidden" name="langue" value="{langue}"> 
+  <input type="hidden" name="id" value="{id}">
+  <input type="hidden" name="id_p" value="{id_p}">  
+  <input type="hidden" name="id_r" value="{id_r}">
+  <input type="hidden" name="list_r" value="{id_r}">
+   <input type="hidden" name="id_rm" value="{id_rm}">
+  <input type="hidden" name="list_rm" value="{list_rm}">
+   <input type="hidden" name="vurgent" value="0">
+   <input type="hidden" name="fichiers" value="">
+    <input type="hidden" name="id_s1" value="{id_s1}">
+    <input type="hidden" name="ip_s1" value="{ip_s1}">
+	<input type="hidden" name="nom_util" value="{nom_util}">
+
+
+<table cellpadding="5" cellspacing="0" width="790" class="text_1a1b">
+       <tr>
+        <td width="28" rowspan="18"></td>
+        <td height="28">&nbsp;</td>
+        <td><input name="Send2" type="button" onClick="appel_submit();" class="blue_btn" value="{SEND}"  ></td>
+       </tr>
+      <tr>
+        <td width="148" height="28"><span class="text_1a2r">*</span> {TO}<span style="visibility:hidden" id="div_to2"></span> </td>
+        <td width="582" id="div_parternaire" >{u_info_r} </td>
+      </tr>
+	   <tr>
+        <td width="148" height="28">&nbsp;</td>
+        <td width="582" >		<span  id="div_to"> </span> </td>
+      </tr>
+      <tr>
+        <td height="28" ><span class="text_1a2r"> *</span> &nbsp;{SUJ}</td>
+        <td><input name="titre" type="text"  value="{titre}" size="60" style="width:500px; height:22px"></td>
+      </tr>
+      <tr valign="top">
+        <td height="28" ><span class="text_1a2r"> *</span>&nbsp;{CONTIENT}
+		
+				</td>
+        <td><img src="images/folder.gif" border="0" onClick="lire_messages_temp()" alt="{OPEN} {MESSAGE_TEMP}"  title="{OPEN} {MESSAGE_TEMP}" >&nbsp; &nbsp;<span id="div_temp_message">
+               &nbsp; </span>
+          &nbsp;
+              <input name="button" type="button" class="blue_btn" value="{SAV_MESSAGE_TEMP}" onClick="if(check_message_temp()){document.frm.submit();}">&nbsp; &nbsp;&nbsp; &nbsp;
+              <span class="text_1b1x">
+              <input name="button2" type="button" class="blue_btn" value="{DEL_MESSAGE_TEMP}" onClick="del_message_temp()">
+              <br>
+              <br>
+              <textarea name="contenu" cols="60" rows="15"    onChange="checkcontent(this.value.length)"  onKeyPress="checkcontent(this.value.length)">{contenu}</textarea>
+              <br>
+                {G_MAX} 2000 {G_CHAR}<br>
+              </span> 
+			  <p  class="text_1b1x">{CHAR_COUNT}: <span class="style15" id="num"></span></p>
+			  
+			  </td>
+      </tr>
+	  <tr valign="top">
+        <td height="28" class="text_1a2r">&nbsp;</td>
+        <td><input name="urgent" type="checkbox">
+          {URGENT_REQUEST} 
+            <input type="checkbox" name="chk_templ" value="checkbox">
+		</td>
+      </tr>
+    </table>
+  </form>
+	 <table   width="790" >
+  
+  <tr>
+  <td width="200">		
+				</td>
+<td valign="top"><span class="text_1b1x">
+                  <p id="addition_message"  style="visibility:hidden"> non</p>
+                  <p id="list_f">{C1} {LIST_F}</p>
+                  <form action="ajax_upload_file_message.{LANGUE_PRE}.php" name="fufile" target="upload_iframe_file" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id_message_temp" value="{id_message_temp}">
+			        <input type="hidden" name="id_message" value="{id_message}">
+				    <input type="hidden" name="langue" value="{langue}"> 
+					<input type="hidden" name="code" value="{code}"> 
+					<input type="hidden" name="rep" value="{rep}"> 
+					<input type="hidden" name="id_s2c" value="{id_s2c}"> 					
+                    <p>
+                      <input type="file" name="u_file" size="2px" onChange="check_file()" />
+                    </p>
+                  </form>
+                  ({G_ATTA_FILE})
+                  <p>
+                    <iframe name="upload_iframe_file" style="width: 400px; height: 100px; display:none "></iframe>
+                    <iframe name="iframe_data" style="width: 400px; height: 100px; display:none "></iframe>
+                  </p>
+                </span> </td>	</tr>
+	</table>
+	
+	 
+      <table  width="790" >
+  
+  <tr>
+  <td width="200">		
+				</td>
+    <td width="67"  > <input name="Send" type="button" class="blue_btn" value="{SEND}" onClick="appel_submit();" >     </td>
+    <td width="42"  ></td>
+    <td width="151" ><input name="Cancel" type="button" class="blue_btn" value="{CANCEL}" onClick="window.close()"></td>
+    <td width="">
+        </td>
+  </tr>
+</table>
+
+{(bottom2)} 
+
+</div>
+  <span id="list_temp" style="visibility:hidden; font-size:2px"  >not a</span> 
+<span id="list_partenaire"  style="visibility:hidden; font-size:2px " >not a</span>
+ <span id="sp_temp"  style="visibility:hidden; font-size:2px " >non</span> 
+  
+
+</body>
+</html>
+<!-- END: MAIN -->

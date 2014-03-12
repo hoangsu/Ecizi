@@ -1,0 +1,154 @@
+<!-- BEGIN: MAIN -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html   {RIGHT_LEFT_ENTRY} >
+<head>
+<meta http-equiv='Content-Type' content='text/html; {CHARSET}' />
+<link rel='stylesheet' href='styles.css' type='text/css'>
+<title> {SAIS_ENT1} </title>
+</head>
+<script language="JavaScript" src="sais_ent1.js" type="text/javascript"> </script>
+
+<script language="JavaScript" >
+function init_form() {  
+	f=document.frm;  
+	{init_form}
+}
+</script>
+
+
+<body  {onload}>
+ <form action="sais_ent1_in.php" name="frm" method="post"  onSubmit="return check_form();">
+ <input type="hidden" name="reouvrir" value="{reouvrir}">
+ <input type="hidden" name="langue" value="{langue}">
+ <input type="hidden" name="change_la" value="0">
+   <input type="hidden" name="tit_img" value="{tit_img}">
+ <div align="center">
+ 
+ <table width='800' cellpadding='0' cellspacing='0'>
+ <tr>
+   <td><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/>  </td>
+      <td colspan='3' height='80' valign="middle"><p align='left' style='color:#CCCCCC; font:20px Arial;' ><b> {SLOGAN} </b></p></td>
+ </tr>
+ <tr>
+   <td align='center' height='26' width='100' background='images/bar1.gif'>
+     <a href='ouvrirh.php' class='link_1a1bt' ><b>{HOME}</b></a>   </td>
+   <td align='center' width='100' background='images/bar2.gif'>
+     <a href='ouvrir.php?id_f=2&categorie=00' class='link_1a1bt'>{OFFER_BOARD}</a>   </td>
+   <td align='center' width='100' background='images/bar2.gif'>
+     <a href='#' class='link_1a1bt'>{MY_ACCOUNT}</a>   </td>
+   <td align='right' width='500' background='images/line.gif' class='text_1a1x'><select name='combo_langue' onChange=" if(check_form_la()){change_langue(); document.frm.submit();} else this.selectedIndex={PRE_LANGUE};">
+    {combo_langue}
+          </select>   </td>
+ </tr>
+ <tr>
+   <td height='24' colspan='4' align='right' class='text_1b1x'><a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a href='#'>{G_FAQ}</a> | <a href='#'>{G_PARTN}</a>  | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a> </td>
+ </tr>
+</table>
+
+<table width="800" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="534" height="20">
+	<a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a>
+	 &raquo; <a href='my_account.php'  >{MY_ACCOUNT}</a> &raquo; {SAIS_ENT1}</td>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="2" height="50"><span class="text_1f1d"> {SAIS_ENT1} </span></td>
+    <td width="263"></td>
+  </tr>
+  <tr>
+    <td height="40" class="text_1a2r" align="right">{HAVE_COMPTE} <a href="login_s1.php?langue={LANGUE_PRE}" class="link_1a1b">{SIGN_HERE}</a><br>
+      <a href="#" class="link_1a1b"></a></td>
+  </tr>
+  <tr>
+    <td height="30"><label><span class="text_1d2g">{annonce}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+(<span class="text_1a2r">*</span>) {G_REQUI_FIEL}</label></td>
+    <td height="30">&nbsp;</td>
+    <td height="30"  align="right"></td>
+  </tr>
+  <tr>
+    <td colspan="3"><table cellpadding="0" cellspacing="0" width="790">
+      <tr>
+        <td width="50" rowspan="10"></td>
+        <td width="214" height="28" class="text_1a1b"><span class="text_1a2r">*</span>&nbsp;{T_CONTACT_NOM} & {T_CONTACT_PRENOM} </td>
+        <td width="524"><span class="text_1b1x">
+          <input name="contact_nom" type="text" style="border-style:inset; border-width:2px;" value="{contact_nom}" size="21"  {RIGHT_LEFT_ENTRY} >
+          <input name="contact_prenom" type="text" style="border-style:inset; border-width:2px;" value="{contact_prenom}" size="22"  {RIGHT_LEFT_ENTRY} >
+        </span></td>
+      </tr>
+      <tr>
+        <td height="28" class="text_1a1b"><span class="text_1a2r">*</span>&nbsp;{T_NOM_ENT}</td>
+        <td><input name="nom_ent" type="text" style="border-style:inset; border-width:2px;" value="{nom_ent}" size="44"  {RIGHT_LEFT_ENTRY} >
+          &nbsp;<span class="text_1b1x">({EXP_ENT})</span> </td>
+      </tr>
+      <tr>
+        <td height="28" class="text_1a1b"><span class="text_1a2r">*</span>&nbsp;{T_PAYS} </td>
+        <td><select name="combo_pays" style="border-style:inset; border-width:2px;">
+           {combo_pays}
+        </select>        </td>
+      </tr>
+      <tr>
+        <td height="28" class="text_1a1b" ><span class="text_1a2r"  id="t_t_util1">*</span>&nbsp;{T_T_UTIL} </td>
+        <td>{radio_t_util} </td>
+      </tr>
+      <tr>
+        <td height="28" class="text_1a1b"><span class="text_1a2r">*</span>&nbsp;{T_EMAIL} </td>
+        <td><input name="email" type="text" style="border-style:inset; border-width:2px; {disable_bg}" value="{email}" size="44"  {disable}  {RIGHT_LEFT_ENTRY} >          
+		&nbsp;<span class="text_1b1x">({T_EMAIL_EXPL1})</span>
+		
+		</td>
+      </tr>
+      <tr>
+        <td height="28" class="text_1a1b"><span class="text_1a2r">*</span>&nbsp;{T_RE_EMAIL} </td>
+        <td><input name="re_email" type="text" style="border-style:inset; border-width:2px;  {disable_bg}" value="{re_email}" size="44" {disable}   {RIGHT_LEFT_ENTRY}  >
+		
+		<span class="text_1b1x">&nbsp;({T_MOPA_EXPL1})</span>
+		</td>
+      </tr>
+      <tr>
+        <td height="28" class="text_1a1b"><span class="text_1a2r">*</span>&nbsp;{T_MOPA} </td>
+        <td><input name="mopa" type="password" style="border-style:inset; border-width:2px;  {disable_bg}" value="{mopa}" size="44" {disable}  {RIGHT_LEFT_ENTRY} ></td>
+      </tr>
+      <tr>
+        <td height="28" class="text_1a1b"><span class="text_1a2r">*</span>{T_RE_MOPA} </td>
+        <td><input name="re_mopa" type="password" style="border-style:inset; border-width:2px;  {disable_bg}" value="{re_mopa}" size="44" {disable}  {RIGHT_LEFT_ENTRY} ></td>
+      </tr>
+      <tr>
+        <td height="28" class="text_1a1b"><span class="text_1a2r">*</span>&nbsp;{T_VCODE} </td>
+        <td><input name="vcode" type="text" style="border-style:inset; border-width:2px;  {disable_bg}" size="38" {disable}  {RIGHT_LEFT_ENTRY} >
+          &nbsp; {img_secu}</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="140" style="padding-left:230"><br>
+        <br>
+        {SAIS_ENT1_A}<br>
+            <br>
+            <span class="text_1b1x">(1)</span> {SAIS_ENT1_B}<br>
+            <br>
+          <span class="text_1b1x">(2)</span> {SAIS_ENT1_C}</td>
+  </tr>
+  <tr>
+    <td colspan="3" height="60" style="padding-left:310"><p>
+      <input name="sav" type="submit" style="border-style:outset; background-color:#CCCCCC" value="{SAIS_ENT1}">
+      </p>
+      <p><br>
+      </p></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="20">{img_language} </td>
+  </tr>
+</table>
+
+<table width=800 cellpadding=0 cellspacing=0>
+  <tr>
+    <td height='1' background='images/point_gr.gif'>	</td>
+  </tr>
+  <tr><td height=10></td></tr>
+</table>
+{(bottomb)}
+ </div>
+ </form>
+</body>
+</html>
+<!-- END: MAIN -->
