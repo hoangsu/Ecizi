@@ -1,0 +1,149 @@
+<!-- BEGIN: MAIN -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html   {RIGHT_LEFT_ENTRY} >
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<title> {STAT_VIEWER}  </title>
+</head>
+<script language="JavaScript" src="ajax.js" type="text/javascript"> </script>
+<script language="JavaScript" src="stat_util.js" type="text/javascript"> </script>
+<script language="JavaScript" >
+var langue='2';
+var id_ent ='{id_e}' ;
+var id_offre ='{id_offre}' ;
+var error_v ='error of value';
+var vyear= 'Year';
+var vmonth= 'Month';
+var vday= 'Day';
+
+function init_form() {  
+	sync0();
+}
+
+</script>
+<body bgcolor="#FFFFFF"  onLoad="init_form();">
+
+ <div id="wrapper">
+   <table width='1000' cellpadding='0' cellspacing='0' id="header">
+ <tr>
+  <td>
+    <a href="/"><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/></a><br>
+      <i class="slogan"> {SLOGAN}</i> 
+  </td>
+      <td colspan='2' height='80' valign="middle" align="right">
+       
+             {G_HI} {nom_util}  | <a href='sign_out.php'>{SIGN_OUT}</a>
+         <select name='combo_langue' onChange="change_langue(this.value); ">
+        {combo_langue}
+        </select>  <br>
+          <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a target='_blank' href='FAQ.html'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>   
+          </td>
+ </tr>
+ <tr>
+   <td align='center' width='138'>
+      </td>
+   <td width='240' align='center' >
+      </td>
+   <td align='right' width='490' class='text_1a1x'><img src="images/header_10.jpg" width="803" height="8" alt="">
+        </td>
+ </tr>
+
+</table>
+ <p></p>
+   <form name="frm" >
+ <input type="hidden" name="rec_date" value="{rec_date}">
+
+<table cellpadding="0" cellspacing="0" width="1000">
+      <tr>
+     <td width="791" height="30" valign="middle" bgcolor="#779bca" class="text_1e1w page_title_td">{STAT_VIEWER} {nom_ent}</td>
+    </tr>
+        <tr>
+          <td>                 </td>
+         </tr>
+         
+         <tr><td height="30" bgcolor="#e7eff7" class="text_1d1b"> &nbsp; {INTERVAL}</td></tr>
+              <tr><td height="20"> {FROM}
+                      <input name="c_date_d" type="text" id="c_date_d" style="border-style:inset; border-width:2px" value="{c_date_d}" size="3" maxlength="2" >
+/
+<input name="c_date_m" type="text" id="c_date_m" size="3" maxlength="2"   >
+/
+<input name="c_date_y" type="text" id="c_date_y"  size="5" maxlength="4"   >   {TO}
+
+<input name="e_date_d" type="text" id="e_date_d"  size="3" maxlength="2" >
+/
+<input name="e_date_m" type="text" id="e_date_m" size="3" maxlength="2"   >
+/
+<input name="e_date_y" type="text" id="e_date_y"  size="5" maxlength="4"   >
+<strong>({DATE_FORMAT})</strong> 
+
+
+</td>
+         </tr>
+          <tr><td>
+          <br>
+            <table width="1000" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="30" colspan="3">{SELECT_INTERVAL} (<span class="text_1a1bu"><b>{NOT_TODAY_STATISTIQUE}</b></span>) </td>
+                </tr>
+              <tr>
+                <td width="141"><input name="button" type="button"  class="blue_btn"   onClick="read_stat('3')" value="{G_ANNEE}"></td>
+                <td width="152"><input name="button3" type="button"  class="blue_btn"   onClick="read_stat('2')" value="{G_MOIS}"></td>
+                <td width="361"><strong>
+                  <input name="button2" type="button" onClick="read_stat('1')"  class="blue_btn"   value="{G_JOUR}">
+                </strong></td>
+                </tr>
+          </table>
+      <br></td></tr>
+
+          
+          <tr><td>
+           <p><br>
+      <span id="re_table" > <table width="1000" border="1" cellpadding="0" cellspacing="0" bordercolor="#ccc">
+             <tr>
+               <td width="100"><strong>{TIME}</strong></td>
+               <td width="146"><strong>{T_PAYS}</strong></td>
+               <td width="158"><strong>{T_LANGUAGE}</strong></td>
+               <td width="127" align="center"><strong>{VISIT_REG}</strong></td>
+               <td width="95" align="center"><strong>CLICK</strong></td>
+             </tr>
+           </table>
+      </span> 
+          
+           <p>           
+           <p></td>
+         </tr>
+              <tr>
+                <td height="30" bgcolor="#e7eff7" class="text_1d1b">&nbsp;</td>
+              </tr>
+                   <tr><td>
+           <p><br>
+      <p>           
+           <p></td>
+         </tr>
+
+         <tr>
+           <td>
+         <br><br>      </td></tr>
+         <tr><td height="20"></td></tr>
+    </table>
+</form>
+
+<table width=800 cellpadding=0 cellspacing=0>
+  <tr>
+    <td height='1' background='images/point_gr.gif'>	</td>
+  </tr>
+  <tr><td height=10></td></tr>
+</table>
+
+
+
+</div>
+ 
+ <span id="sp_temp"  style="visibility:hidden">{sp_temp}</span>  
+<span id="sp_temp1"  style="visibility:hidden">{sp_temp1}</span> 
+
+
+</body>
+</html>
+<!-- END: MAIN -->

@@ -899,6 +899,7 @@ img {border:none;}
 }
 
 /*------------------------------new------------------------------------------------*/
+input[type="text"],input[type="email"],input[type="password"],input[type="search"], select {border:1px solid #999; height: 20px;}
 .red_s {color: #bb1d1a;}
 .blue_btn:focus {border:none;}
 .blue_btn{ border:none; cursor: pointer; color: #fff;text-align: center; height: 26px; line-height: 18px\9; background-image:none; 
@@ -1014,5 +1015,6 @@ background-color: #779bca; padding:5px 7px; padding:5px\9; width:auto; white-spa
 .send_text .org_btn {margin-left: 10px;  text-align: center; width:188px; display: inline-block; height: 20px;  line-height: 22px;}
 .send_text .org_btn:hover {color: #f89820;}
 #my_favorite > br {display: none}
+.message_page select {border: 1px solid #777; height: 22px;}
 .message_page #div_parternaire select {width:500px; height:25px;}
 .manage_offre .title_nobg {line-height: 30px;display: inline-block;padding: 0 13px;cursor: pointer;font-size: 14px}

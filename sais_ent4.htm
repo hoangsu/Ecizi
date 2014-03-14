@@ -1,9 +1,10 @@
 <!-- BEGIN: MAIN -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html   {RIGHT_LEFT_ENTRY} >
 <head>
 
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-<link rel='stylesheet' href='styles.css' type='text/css'>
+<link rel='stylesheet' href='css/style.css' type='text/css'>
 <title> {REVIEW_MEMBERSHIP} </title>
 
 </head>
@@ -21,40 +22,33 @@ function init_form() {
 </script>
 <body bgcolor="#FFFFFF"  onLoad="init_form();">
  <div align="center">
- 
- <table width='800' cellpadding='0' cellspacing='0'>
+ <table width='1000' cellpadding='0' cellspacing='0' id="header">
  <tr>
- <td><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/>  </td>
-      <td colspan='3' height='80' valign="middle"><p align='left' style='color:#CCCCCC; font:20px Arial;' ><b> {SLOGAN} </b></p></td>
-   
- </tr>
- <tr>
-   <td align="center" background="my_account_files/bar1.gif" width="100" height="26">
-	 <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a>
-   </td>
-   <td align="center" background="my_account_files/bar2.gif" width="100">
-     <a href='ouvrir.php?id_f=2&categorie=00' class='link_1a1bt'>{OFFER_BOARD}</a>
-   </td>
-   <td align="center" background="my_account_files/bar2.gif" width="100">
-     <a href="my_account.php">{MY_ACCOUNT}</a>
-   </td>
-   <td class="text_1a1x" align="right" background="my_account_files/line.gif" width="500">
-      {G_HI} <span id="span_user_info">  </span> | <a href='sign_out.php'>{SIGN_OUT}</a>  | 
-       <select name='combo_langue' onChange="change_langue(this.value); ">
+  <td>
+    <a href="/"><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/></a><br>
+      <i class="slogan"> {SLOGAN}</i> 
+  </td>
+      <td colspan='2' height='80' valign="middle" align="right">
+       
+             {G_HI} {nom_util}  | <a href='sign_out.php'>{SIGN_OUT}</a>
+         <select name='combo_langue' onChange="change_langue(this.value); ">
   		  {combo_langue}
-        </select>
-   </td>
+        </select>  <br>
+          <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a target='_blank' href='FAQ.html'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>   
+          </td>
  </tr>
  <tr>
-   <td height='24' colspan='4' align='right' class='text_1b1x'>
-      <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a href='#'>{G_FAQ}</a> | <a href='#'>{G_PARTN}</a>  | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>  
-   </td>
+   <td align='center' width='138'>
+      </td>
+   <td width='240' align='center' >
+      </td>
+   <td align='right' width='490' class='text_1a1x'><img src="images/header_10.jpg" width="803" height="8" alt="">
+        </td>
  </tr>
-</table>
 
+</table>
  
- 
-  <table width="800" cellpadding="0" cellspacing="0">
+  <table width="1000" cellpadding="0" cellspacing="0">
     <tr>
 	  <td width="10" rowspan="100"></td>
  <td colspan="2" height="60">
@@ -63,7 +57,7 @@ function init_form() {
    </tr>
    
    <tr>
-	  <td height="50"><span class="text_1f1d"> {REVIEW_MEMBERSHIP}</span></td>
+	  <td height="50"><span class="text_1f1d title_nobg"> {REVIEW_MEMBERSHIP}</span></td>
    </tr>
 
    <tr>
@@ -107,26 +101,19 @@ function init_form() {
 			
 			<tr>
 				<td>
-					<span class="text_1a1b" style="line-height:18px;padding-left:10px;">{VIEW_GOLD_MEM_B}</span>, <span class="text_1a1b" style="line-height:18px;padding-left:10px;">{TRADUCTION_PROMO_GOLD_MEM}</span>
+					<span class="text_1a1b">{UPGRADE_MEMBER_B}</span>
 					</td>
 			</tr>
-			
 			<tr>
-				<td>
-							</td>
+				<td></td>
 			</tr>
-			
-			<tr>
-				<td>				</td>
-			</tr>
-			
 			<tr>
 				<td>{WRITE_PAY_CODE}:	{pay_code}			</td>
 			</tr>
 			
 			<tr>
 			  <td align="center">
-			  <input name="submit" type="submit" style="border-style:outset; background-color:#CCCCCC" value="{NEXT}" size="50" onClick="document.frm.submit();">
+			  <input name="submit" type="submit" class="blue_btn" value="{NEXT}" size="50" onClick="document.frm.submit();">
 			  </td>
 			</tr>			
 		</table>

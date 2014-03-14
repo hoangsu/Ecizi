@@ -30,7 +30,7 @@ function init_form() {
 
 </script>
 <body  onLoad="init_form()" >
-<div id="wrapper chat_page">
+<div id="wrapper" class="chat_page">
 
 <form name="frm">
 <h1 class="title_nobg">{A1}</h1>
@@ -54,19 +54,19 @@ function init_form() {
     <input name="button" class="org_btn" type="button"  value="{SEND}" onClick="chat_text2()" >
 </div>
 <div class="send_text">
- <select style="width:265px" class="selection"><option>INVITE_A_CHAT</option></select>
+ <select style="width:265px" class="selection"><option>{INVITE_A_CHAT}</option></select>
   <a class="nut org_btn" onClick="important_chat()"><strong>  {MARQUER_CHAT} </strong></a> 
   <a class="nut org_btn" onClick="effa_chat()"><strong>  {EFFA_CHAT} </strong></a>
 
 </div>
-
+<br>
  <p>
     <div id="partenaire_room" style="border:thin" >  </div>
    <span id="partenaires_trad" style="border:thin" > </span>
    <span id="partenaires_b2b" style="border:thin" >  </span>
   <br>
       <strong>{LIST_UTILS_CHAT}</strong>
-  <span id="chat_utils" style="visibility:hidden">  {chat_utils}  </span>
+  <span id="chat_utils" style="visibility:hidden">  {chat_utils}  </span><br>
   <span id="chat_utilsb"></span>
   </p> 
 
