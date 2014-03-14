@@ -1,9 +1,10 @@
 <!-- BEGIN: MAIN -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html   {RIGHT_LEFT_ENTRY} >
 <head>
 
 <meta http-equiv='Content-Type' content='text/html; {CHARSET}' />
-<link rel='stylesheet' href='styles.css' type='text/css'>
+<link rel='stylesheet' href='css/style.css' type='text/css'>
 <title> {MANAGE_OFFRE} </title>
 
 </head>
@@ -37,43 +38,46 @@ function init_form() {
 <script language="JavaScript" src="manage_offre.js" type="text/javascript"> </script>
 
 <body   onLoad="init_form()">
- <div align="center">
- <table width='887' cellpadding='0' cellspacing='0'>
+<div id="wrapper" class="manage_offre">
+ <table width='1000' cellpadding='0' cellspacing='0' id="header">
  <tr>
-  <td><img src='images/logo.png'  border='0'   onClick="window.open('ouvrirh.php')">  </td>
-      <td colspan='3' height='80' valign="middle"><p align='left' style='color:#CCCCCC; font:20px Arial;' ><b> {SLOGAN} </b></p></td>
+  <td>
+    <a href="/"><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/></a><br>
+      <i class="slogan"> {SLOGAN}</i> 
+  </td>
+      <td colspan='2' height='80' valign="middle" align="right">
+       
+             {G_HI} {nom_util}  |  <a href='my_account.php'  >{MY_ACCOUNT}</a> | <a href='sign_out.php'>{SIGN_OUT}</a>
+        <select name='combo_langue' onChange=" document.combolang.submit();">
+    {combo_langue}
+      </select>   <br>
+          <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a target='_blank' href='FAQ.html'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>   
+          </td>
  </tr>
  <tr>
    <td align='center' width='138'>
-     <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a>   </td>
-   <td width='120' align='center' >
-     <a href='ouvrir.php?id_f=2&categorie=00'  >{OFFER_BOARD}</a>   </td>
-   <td width='120' align='center' >
-     <a href='my_account.php'  >{MY_ACCOUNT}</a>   </td>
-   <td align='right' width='474' background='images/line.gif' class='text_1a1x'>
-        <form name="combolang" action="manage_offre.php"  method="post">
-		      <input type="hidden" name="t_offre" value="{t_offre}">
-                {G_HI} {nom_util} | <a href='sign_out.php'>{SIGN_OUT}</a> |
-      <select name='combo_langue' onChange=" document.combolang.submit();">
-    {combo_langue}
-      </select>   </form>    </td>
+      </td>
+   <td width='240' align='center' >
+      </td>
+   <td align='right' width='490' class='text_1a1x'><img src="images/header_10.jpg" width="803" height="8" alt="">
+        </td>
  </tr>
- <tr>
-   <td height='24' colspan='4' align='right' class='text_1b1x'>
-      <a href='#'>{G_EMAI_US}</a> | <a href='#'>{G_FAQ}</a> | <a href='#'>{G_PARTN}</a>  | <img src='images/chat.gif' border='0'> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>   </td>
- </tr>
+
 </table>
- 
-  <table width="922" cellpadding="0" cellspacing="0">
+<p>&nbsp;</p>
+  <table width="920" cellpadding="0" cellspacing="0">
     <tr>
 	  <td width="10" rowspan="6"></td>
 		  <td width="910" height="20">
 	       <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a> &raquo; <a href="my_account.php">{MY_ACCOUNT}</a> &raquo;   {MANAGE_OFFRE}</td>
    </tr>
-   <tr><td height="50"><span class="text_1f1d"> {MANAGE_OFFRE} : </span>
-   		<table> <tr>		 <td width="130" height="25" ><div id='t1' onClick="change_t_offre(1,0);"> <span class="text_1a2w"  style="background:#0099FF" > {SELL_LEAD}</span> </div></td>
-		 <td width="130" ><div id='t2' onClick="change_t_offre(2,0);"> <span class="link_1a1b" >{BUY_LEAD}</span> </div> </td>
-		 <td width="130"><div id='t3' onClick="change_t_offre(3,0);"> <span class="link_1a1b" > {COOP} </span> </div> </td>
+   <tr><td>&nbsp;</td></tr>
+   <tr><td height="50"><span class="text_1f1d page_title_td" style="display: block; width:100%; line-height: 30px"> {MANAGE_OFFRE} : </span>
+    <br>
+   		<table> <tr>		 <td width="130" height="25" >
+        <div id='t1' onClick="change_t_offre(1,0);"> <span class="text_1a2w title_nobg" > {SELL_LEAD}</span> </div></td>
+		 <td width="130" ><div id='t2' onClick="change_t_offre(2,0);"> <span class="link_1a1b title_nobg" >{BUY_LEAD}</span> </div> </td>
+		 <td width="130"><div id='t3' onClick="change_t_offre(3,0);"> <span class="link_1a1b title_nobg" > {COOP} </span> </div> </td>
 </tr></table>
 
    </td>
@@ -85,7 +89,7 @@ function init_form() {
    <tr>
     <td>
       <form name="frm_search" method="post">
-	<table width="907" cellpadding="0" bgcolor="#ffba00">
+	<table width="907" cellpadding="0" bgcolor="#e6edf6">
       <tr valign="bottom">
         <td width="19" height="21">&nbsp;</td>
         <td width="256" height="21"> {CHERCHER} {MOT}</td>
@@ -95,7 +99,7 @@ function init_form() {
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td><input name="mot"  type="text" style="border-style:inset; border-width:2px" size="30"></td>
+        <td><input name="mot"  type="text" size="30"></td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
@@ -114,18 +118,18 @@ function init_form() {
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td><input name="ojourcd" type="text" id="ojourcd" style="border-style:inset; border-width:2px" value="" size="3" maxlength="2" onChange="verif_j('jour')" >
+        <td><input name="ojourcd" type="text" id="ojourcd"  value="" size="3" maxlength="2" onChange="verif_j('jour')" >
 /
-  <input name="ojourcm" type="text" id="ojourcm" style="border-style:inset; border-width:2px" value="" size="3" maxlength="2"  onChange="verif_j('mois')" >
+  <input name="ojourcm" type="text" id="ojourcm"  value="" size="3" maxlength="2"  onChange="verif_j('mois')" >
 /
-<input name="ojourcy" type="text" id="ojourcy" style="border-style:inset; border-width:2px" value="" size="5" maxlength="4"  onChange="verif_j('anne')" > </td>
+<input name="ojourcy" type="text" id="ojourcy"  value="" size="5" maxlength="4"  onChange="verif_j('anne')" > </td>
         <td>&nbsp;</td>
-        <td><input name="ojourtd" type="text" id="ojourtd" style="border-style:inset; border-width:2px" value="" size="3" maxlength="2" onChange="verif_j2('jour')" >
+        <td><input name="ojourtd" type="text" id="ojourtd"  value="" size="3" maxlength="2" onChange="verif_j2('jour')" >
 /
-  <input name="ojourtm" type="text" id="ojourtm" style="border-style:inset; border-width:2px" value="" size="3" maxlength="2"  onChange="verif_j2('mois')" >
+  <input name="ojourtm" type="text" id="ojourtm"  value="" size="3" maxlength="2"  onChange="verif_j2('mois')" >
 /
-<input name="ojourty" type="text" id="ojourty" style="border-style:inset; border-width:2px" value="" size="5" maxlength="4"  onChange="verif_j2('anne')" > ({DATE_FORMAT2})</td>
-        <td><input name="button" type="button" style="border-style:outset; background-color:#0099FF; font-weight:bold; color:#FFFFFF;" value="{CHERCHER}" onClick="f_cherche_of()"></td>
+<input name="ojourty" type="text" id="ojourty"  value="" size="5" maxlength="4"  onChange="verif_j2('anne')" > ({DATE_FORMAT2})</td>
+        <td><input name="button" type="button"  class="blue_btn" value="{CHERCHER}" onClick="f_cherche_of()"></td>
       </tr>
       <tr>
         <td height="14">&nbsp;</td>
