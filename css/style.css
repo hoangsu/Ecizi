@@ -899,7 +899,7 @@ img {border:none;}
 }
 
 /*------------------------------new------------------------------------------------*/
-input[type="text"],input[type="email"],input[type="password"],input[type="search"], select {border:1px solid #999; height: 20px;}
+input[type="text"],input[type="email"],input[type="password"],input[type="search"], select {border:1px solid #999; }
 .red_s {color: #bb1d1a;}
 .blue_btn:focus {border:none;}
 .blue_btn{ border:none; cursor: pointer; color: #fff;text-align: center; height: 26px; line-height: 18px\9; background-image:none; 
@@ -912,6 +912,7 @@ box-shadow: #666 0px 2px 3px;behavior: url(PIE.htc);}
 .offre input[type="text"] {border:1px solid #777; height: 20px; line-height: 20px; background:#fff; margin:0;}
 .selection{border:1px solid #a4a5a9; background: #e6edf7; height: 24px; }
 .divcombo_categories select{border:1px solid #777; width:244px; height: 150px;  padding:2px; margin-left: 10px }
+.offre #divcatego1,.offre #divcatego2,.offre #divcatego3{ margin-left: 10px }
 .offre textarea {border: 1px solid #666;}
 .offre ::-webkit-file-upload-button {background: url(../images/blue_btn_l.jpg) no-repeat 0 0;border: none;cursor: pointer;height: 28px;width: 114px;color: #fff;text-align: center;padding: 3px 0 12px;}
 .offre ::-ms-browse { background: url(../images/blue_btn_l.jpg) no-repeat 0 0;border: none;cursor: pointer;height: 28px;width: 114px;color: #fff;text-align: center;padding: 3px 0 12px;}
@@ -1004,7 +1005,7 @@ a {cursor: pointer;}
 #my_favorite .fav_tu .fav_tu2 img.fav_tu3 {margin-right: 100px; max-width: 120px; border:1px solid #ccc;border-radius: 10px; -webkit-border-radius: 10px;
 -moz-border-radius: 10px; }
 #my_favorite .fav_tu .fav_tu2 img.fav_tu4 {vertical-align: top;}
-.chat_page #chat_room {border:1px solid #ccc; overflow-y:auto; height: 334px;width:815px; margin:15px 0 30px 50px;}
+.chat_page #chat_room {border:1px solid #ccc; overflow-y:auto; height: 234px;width:815px; margin:15px 0 30px 50px;}
 .type_text {margin-left: 50px;  background: url(../images/dotted.jpg) repeat-x 0 bottom; padding-bottom: 30px; width:815px;}
 .org_btn {border:none; cursor: pointer; color: #fff;text-align: center; height: 26px; line-height: 18px\9; background-image:none; 
 background-color: #779bca; padding:5px 7px; padding:5px\9; width:auto; white-space: nowrap; border-radius: 3px;-webkit-border-radius: 3px;
@@ -1018,3 +1019,4 @@ background-color: #779bca; padding:5px 7px; padding:5px\9; width:auto; white-spa
 .message_page select {border: 1px solid #777; height: 22px;}
 .message_page #div_parternaire select {width:500px; height:25px;}
 .manage_offre .title_nobg {line-height: 30px;display: inline-block;padding: 0 13px;cursor: pointer;font-size: 14px}
+.logo_companie img {vertical-align: middle; background: none !important}

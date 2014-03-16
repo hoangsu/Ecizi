@@ -65,10 +65,10 @@ function init_form() {
         <td height="30" colspan="2" class="title_nobg"><span class="text_1f1d"> {LOGIN} </span><br></td>
       </tr> 
       <tr>
-        <td colspan="3"><table width="407" cellpadding="0" cellspacing="0">
-            <tr valign="bottom">
-              <td height="30"  width="305"><strong>{G_ALRE_MEMB}</strong> </td>
-              <td  width="100"></td>
+        <td colspan="3"><table width="800" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td height="30"  class="page_title_td" style="width:395px;"><strong>{G_ALRE_MEMB}</strong> </td>
+              <td> &nbsp;</td>
             </tr>
           </table>  </td>
       </tr>
@@ -81,7 +81,7 @@ function init_form() {
             <tr valign="top">
               <td width="430" height="319"><table width="406" height="319" cellpadding="5" cellspacing="0">
                   <tr>
-                    <td width="394" align="center" bgcolor="#e6edf6" style="border:1px solid #ccc;border-radius:5px;"><table cellpadding="3" cellspacing="0">
+                    <td width="394" align="center" bgcolor="#e6edf6"><table cellpadding="3" cellspacing="0">
                         <tr valign="top">
                           <td width="106" height="53">{T_EMAIL} </td>
                           <td><input name="email" type="text" size="25"  value="{email_diladi}"  {RIGHT_LEFT_ENTRY}></td>
@@ -109,16 +109,18 @@ function init_form() {
                   </tr>
                 </table>
                 <br></td>
-              <td width="369" ><table cellpadding="5" cellspacing="0" width="369" height="319" style="border:1px solid #ccc;border-radius:5px;" bgcolor="#e6edf6">
-                  <tr>
-                    <td width="357" height="40" align="center"><span class="text_1d1r">{NEW}</span>, {NOT_YET} </td>
+              <td width="369" >
+            <table cellpadding="5" cellspacing="0" width="369">
+                  <tbody><tr>
+                    <td width="357" height="40" align="center"><span class="text_1d1r"><b style="color:red">{NEW}</b></span>, {NOT_YET} </td>
                   </tr>
                   <tr>
-                    <td bgcolor="#e6edf6" valign="top">
-					      <a href="sais_ent1_in.php" class="link_1d1gu">{JOIN_FREE}</a>
-					  </td>
+                    <td bgcolor="#e6edf6">
+                <a href="sais_ent1_in.php" class="link_1d1gu"><b>{JOIN_FREE}</b></a>
+            </td>
                   </tr>
-                </table>  </td>
+                </tbody></table>  
+            </td>
             </tr>
           </table></td>
       </tr>

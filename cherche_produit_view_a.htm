@@ -1,0 +1,241 @@
+<!-- BEGIN: MAIN -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html   {RIGHT_LEFT_ENTRY} >
+<head>
+<meta http-equiv='Content-Type' content='text/html; {CHARSET}' />
+<link rel='stylesheet' href='css/style.css' type='text/css'>
+<title> {CHERCHE_PRODUIT_VIEW} {titre}</title>
+</head>
+<script language="JavaScript" src="cherche_produit_view.js" type="text/javascript"> </script>
+<script language="JavaScript" src="ajax.js" type="text/javascript"> </script>
+
+<script language="JavaScript" src="smot.js" type="text/javascript"> </script>
+<script language="JavaScript" src="smot_f.js" type="text/javascript"> </script>
+
+<script language="JavaScript" src="lib_gen.js" type="text/javascript"> </script>
+<script language="JavaScript" src="norm_string.js" type="text/javascript"> </script>
+<script language="JavaScript" >
+var vp_entry_word = '{P_ENTRY_WORD}';
+var vp_chat ='{SVP_CHAT}';
+var nouv_m ={nouv_mot} ;
+var id_ent ='{id}' ;
+var id_u ='{id_u}';
+//var langue ='{langue}';
+var langue ='{LANGUE_PRE}';
+var id_offre ='{id_offre}';
+var id_f='50';
+var cate1='{cate1}';
+var categorie = '{categorie}';
+var t_offre ='{t_offre}';
+var vhi= '{G_HI}';
+var lb_add_fav_c='{ADD_FAVO_COMPANIE}';
+var lb_add_fav_o='{ADD_FAVO_OFFE}';
+var lb_my_favorite='{MY_FAVORITE}';
+var lb_sign_out = '{SIGN_OUT}';	
+var vsign_before ='{SIGN_BEFORE}';
+var vphoto='{photo_offre2}';
+function init_form() {
+	check_smot();
+	setTimeout("sync0()",30);
+}
+</script>
+
+
+<body  onLoad="init_form();">
+
+<div id="wrapper">
+ <form  name='frm' method='post' action="cherche.php" onSubmit="return check_search();">
+<input type="hidden" name="mots" value="">
+<input type="hidden" name="langue" value="">
+<input type="hidden" name="categorie" value="">
+<input type="hidden" name="t_offre" value="">
+<input type="hidden" name="id_f" value="">
+<input type="hidden" name="t_cherche" value=1> 
+<table width='1000' cellpadding='0' cellspacing='0' id="header">
+ <tr>
+  <td>
+    <a href="/"><img src="images/logo.png"  onclick="window.open('ouvrirh.php')"/></a><br>
+      <i class="slogan"> {SLOGAN}</i> 
+  </td>
+      <td colspan='2' height='80' valign="middle" align="right">
+      
+               <span id="span_user_info"> {WELCOME} </span>  | <a href="my_account.php" class='link_1a1bt'>
+     {MY_ACCOUNT}</a> | <a href='sign_out.php'>{SIGN_OUT}</a> 
+   <select name='combo_langue_ent' class="selection" onChange="change_langue(this.value); ">
+    {combo_langue_o}
+          </select>
+     <br />    
+          <a onClick="window.open('appel_message_s1.php?id_r=107&langue={LANGUE_PRE}&reply=0')">{G_EMAI_US}</a> | <a target='_blank' href='FAQ.html'>{G_FAQ}</a> |<a  onClick="window.open('appel_community.php?langue={LANGUE_PRE}')"> {COMMUNITY}</a> | <img src='images/chat.gif' border='0' onClick="window.open('live_support.php')"> &nbsp;<a onClick="window.open('live_support.php')">{G_SUP_ONL} </a>   
+          </td>
+ </tr>
+ <tr>
+   <td align='center' width='138'>
+      </td>
+   <td width='240' align='center' >
+      </td>
+   <td align='right' width='490' class='text_1a1x'><img src="images/header_10.jpg" width="803" height="8" alt="">
+        </td>
+ </tr>
+
+</table>
+<p></p>
+ 
+   <table width="1000" cellpadding="0" cellspacing="0">
+    <tr>
+	  <td width="10" rowspan="16"></td>
+	  <td width="790" colspan="2" height="20">
+	    <a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a> &raquo; <a href="ouvrir.php?id_f=2&categorie=00">{TABLE_OFFRE}</a> &raquo;	{CHERCHE_PRODUIT_VIEW}   </td>
+   </tr>
+   <tr><td colspan="2" height="4" >&nbsp;</td>   
+   </tr>
+
+   <tr>
+	  <td colspan="2" bgcolor="#ffba00" valign="middle">
+	  
+	  <table cellpadding="2" cellspacing="0" align="center" width="775">
+		<tr>
+		  <td height="40" valign="middle"><input style="height:22px;" name="mot" type="text" id="mot"  value="{P_ENTRY_WORD}"  size="55" onClick="veri_n_mot();"  {RIGHT_LEFT_ENTRY}>
+		    &nbsp;
+		    <input name="button" type="button" class="org_btn" onClick="f_cherche();"   value="{CHERCHER}"></td>
+		</tr>
+	  </table>
+	  </td>
+      </tr>
+   <tr>
+     <td height="430" colspan="2">
+	 <div  id="div_of">
+	 <p class="text_1f1d " style="clear:both; overflow:hidden; margin:20px 0;"> <span class="title_nobg" style="float:left; display:inline-block">{titre}</span>
+    <span style="float:right;"><a onClick="stat_view()" class='link_1a1bt'>{STAT_VIEWER}</a>
+    <br>
+    {N_VISIT_LA} / {N_VISIT}=<span id="visit_info"></span> </span></p>
+    
+	 <table cellpadding="2" cellspacing="0" width="1000">
+       <tr valign="top">
+         <td colspan="2" rowspan="8"><span id="sp_photo_offre">{photo_offre}</span>
+
+          <br><img src="images/scop.gif"><a onClick="large_view()" class="link_1a1b">{LARG_VIEW}</a>
+        </td>
+         <td colspan="2" align="left" class="text_1f1g"> {PROD_FEAT}</td>
+       </tr>
+       <tr valign="top">
+         <td width="173" height="22" align="left" class="text_1a2d">{T_PAYS_O} </td>
+         <td width="338" align="left"> {pays} </td>
+       </tr>
+       <tr valign="top">
+         <td height="22" align="left" class="text_1a2d">{T_MODEL}</td>
+         <td align="left"> {model} </td>
+       </tr>
+       <tr valign="top">
+         <td height="25" align="left" class="text_1a2d"> {T_MPAY} </td>
+         <td height="25" align="left"> {mpay_lb} </td>
+       </tr>
+       <tr valign="top">
+         <td height="18" align="left" class="text_1a2d">{T_VQC} </td>
+         <td height="18" align="left"> {vqc_lb} </td>
+       </tr>
+       <tr valign="top">
+         <td height="23" align="left" class="text_1a2d">{T_BRAND}</td>
+         <td height="23" align="left"> {brand} </td>
+       </tr>
+       <tr valign="top">
+         <td height="24" align="left" class="text_1a2d">{T_PACK_DETAIL}</td>
+         <td height="24" align="left"> {pack_detail} </td>
+       </tr>
+       <tr valign="top">
+         <td height="24" colspan="2" align="left" class="text_1a2d">{T_DETAIL}</td>
+         </tr>
+       <tr valign="top">
+         <td width="1" rowspan="5"></td>
+         <td width="233" height="37"></td>
+         <td colspan="2" rowspan="4" align="left"> {detail}
+		 {certifi}
+		 
+		  {origine} {port}{liv_temps}</td>
+         </tr>
+       <tr>
+         <td height="51">{T_OJOURC}: {ojourcm} {ojourcd}, {ojourcy} <br>
+             <br>
+		 {T_OJOURT}:   {ojourtm} {ojourtd}, {ojourty} <br>
+		 <br>
+		 {LANG_OFFR}:&nbsp; {list_langue_o}   {flag_langue_o} </td>
+         </tr>
+       <tr>
+        
+         </tr>
+       <tr>
+         
+         </tr>
+       <tr>
+         <td height="8"><span id="lb_attach_files">{T_FILE}</span><span id="span_attach_files"> {attach_files}</span></td>
+         <td colspan="2" >{T_FOB} &nbsp; &nbsp; {FROM}&nbsp;{prixc} &nbsp;{argent} &nbsp; &nbsp;{TO} &nbsp;{prixt}  &nbsp; {argent}   &nbsp; &nbsp;{FOR} &nbsp;{unit_pv}</td>
+       </tr>
+     </table>
+	 </div>
+    </td>
+   </tr>
+   <tr><td colspan="2" height="3" ></td>
+   </tr>
+   <tr><td colspan="2">
+     <table width="763" height="26">
+	 <tr align="center">
+	 <td width="171" align="right" id="lb_offres_categorie">{SIMIL_PRO}</td>
+	 <td width="409" align="left" id="view_offres_categorie"></td>
+	 </tr>     
+	 </table>
+   </td></tr>
+   <tr>
+    <td colspan="2">
+	  <table cellpadding="0" cellspacing="0" width="100%"><tr>
+      <td height="30"  width="549" class="text_1e1w page_title_td">{G_COMPA_INFO}</td>
+	  <td class="page_title_td" width="246"></td>
+	  </tr></table>	</td>
+   </tr>
+   <tr>
+    <td colspan="2">
+	<table cellpadding="0" cellspacing="0" width="790">
+	 <tr><td height="15" colspan="4"></td>
+		</tr>
+	 <tr valign="top" height="25">
+	  <td height="26" colspan="2" class="text_1d2g"><a href='ouvrir.php?id_f=70&id_ent={id}&langue={LANGUE_PRE}'> {nom_ent} </a>, {ville}, {pays} &nbsp;&nbsp; {pays_img} </td>
+	  <td width="1" rowspan="6"></td>
+	  <td width="320" rowspan="2">    <span  onClick="mail_to()" class="link_1d1b">  <img src="images/mail_2.gif" border="0" title="{INVITE_ENV_EMAIL}"  >{G_ENV_EMAIL} </span><span id="div_chat" > </span><br><img src="images/contact.gif" border="0">{G_CONTA_INF} </td>
+	 </tr>
+	 <tr height="25"><td width="27" height="22">{tmembre_img}</td>
+	 <td width="440" class="link_1a1bt"><a  class="link_1a1bt" style="color:red; font-size:18px; padding-left:5px;"> {tmembre_lb} </a></td>
+	 </tr>
+	 <tr height="25"><td height="21">&nbsp;</td>
+	 <td></td>
+	 <td width="320" bordercolor="#999999" class="text_1b1b"> {nom_ent}, {tel1} </td>
+	 </tr>
+	 <tr height="25"><td height="20"></td>
+	 <td>  </td>
+	 <td width="320" bordercolor="#999999" class="text_1b1b"> {adr} </td>
+	 </tr>
+	 <tr height="25"><td height="20"></td>
+	 <td></td>
+	 <td width="320" bordercolor="#999999" class="text_1b1b"> {city} </td>
+	 </tr>
+	 <tr height="25"><td height="21"></td>
+	 <td>{T_WEB}: {web}</td>
+	 <td width="320" bordercolor="#999999" class="text_1a1b"> {ville}, {pays} </td>
+	 </tr> 
+	</table>
+	
+
+	
+		</td>
+   </tr>
+   <tr><td colspan="2" height="30" ></td></tr>
+   
+  </table>
+  <img src="images/bmark.gif" alt="{ADD_FAVO_COMPANIE}" title="{ADD_FAVO_COMPANIE}" onClick="add_favo_e('{photo_util_encode}')">
+  
+  <img src="images/plus.gif"   title="{ADD_FAVO_OFFE}" onClick="add_favo_o('{photo_offre_encode}')">
+  <p> <span id="list_u"  style="visibility:hidden">non</span> </p>
+   <span id="sp_temp"  style="visibility:hidden">non</span>
+
+   </form>    
+ </div>
+</body>
+</html>
+<!-- END: MAIN -->
