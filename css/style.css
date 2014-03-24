@@ -1020,3 +1020,11 @@ background-color: #779bca; padding:5px 7px; padding:5px\9; width:auto; white-spa
 .message_page #div_parternaire select {width:500px; height:25px;}
 .manage_offre .title_nobg {line-height: 30px;display: inline-block;padding: 0 13px;cursor: pointer;font-size: 14px}
 .logo_companie img {vertical-align: middle; background: none !important}
+.title_launching {font-size:30px; background:url(../images/title_launching.png) no-repeat left bottom; color:#1e4191; padding-bottom:10px; font-weight:normal;}
+.column_content {overflow:hidden}
+.column_content li {margin-bottom:7px}
+.column_content .left {float:left;}
+.column_content .right {float:right; }
+.column_content > .left {float:left; width:57%; border-right:1px dotted blue; padding-right:2% }
+.column_content > .right {float:right; width:38%; padding-left:1%;}
+.column_content .column_lv2 .left {}
