@@ -1,19 +1,20 @@
-<!-- BEGIN: MAIN -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html   {RIGHT_LEFT_ENTRY} >
 <head>
 <meta http-equiv='Content-Type' content='text/html; {CHARSET}' />
-<link rel='stylesheet' href='css/style.css' type='text/css'>
+<meta name="keywords" content="{KEYWORDS},{nom_ent}" />
+<meta name="description" content="{DESCRIPTION}" >
+<link rel='stylesheet' href='/s1/form/css/style_hoang.css' type='text/css'>
 <title> {CINFO} {nom_ent}  </title>
 </head>
-<script language="JavaScript" src="companie.js" type="text/javascript"> </script>
-<script language="JavaScript" src="ajax.js" type="text/javascript"></script>
+<script language="JavaScript" src="/s1/form/companie.js" type="text/javascript"> </script>
+<script language="JavaScript" src="/s1/form/ajax.js" type="text/javascript"></script>
 
-<script language="JavaScript" src="smot.js" type="text/javascript"> </script>
-<script language="JavaScript" src="smot_f.js" type="text/javascript"> </script>
+<script language="JavaScript" src="/s1/form/smot.js" type="text/javascript"> </script>
+<script language="JavaScript" src="/s1/form/smot_f.js" type="text/javascript"> </script>
 
-<script language="JavaScript" src="lib_gen.js" type="text/javascript"> </script>
-<script language="JavaScript" src="norm_string.js" type="text/javascript"> </script>
+<script language="JavaScript" src="/s1/form/lib_gen.js" type="text/javascript"> </script>
+<script language="JavaScript" src="/s1/form/norm_string.js" type="text/javascript"> </script>
 <script language="JavaScript" >
 
 var vp_entry_word = '{P_ENTRY_WORD}';
@@ -46,42 +47,38 @@ function init_form() {
 }
 </script>
 <body class="text_1a1d" onLoad="init_form();">
- <div id="wrapper">
+ <div id="wrapper" align="center">
   <form name="frm" >  
 <table width='1000' cellpadding='0' cellspacing='0' >
  <tr>
-   <td colspan='3' height='80' bgcolor="#ececec"><p align='left' class="logo_companie">{photo_util} <b style="color:blue; padding-left:10px; font-size:23px">  {nom_ent} </b><span id="sp_logo" style="float:right; padding-right:10px">{tmembre_img}<span class="red_s" style="font-size:18px; padding-left:5px; text-transform: uppercase" >{tmembre_lb}</span></span></p></td>
+   <td colspan='2' height='80' bgcolor="#ececec"><p align='left' class="logo_companie">{photo_util} <b style="color:blue; padding-left:10px; font-size:23px">  {nom_ent} </b><span id="sp_logo" style="float:right; padding-right:10px">{tmembre_img}<span class="red_s" style="font-size:18px; padding-left:5px; text-transform: uppercase" >{tmembre_lb}</span></span></p></td>
  </tr>
  <tr>
-   <td colspan='3' height='1' background='images/point_gr.gif'></td>
+   <td colspan='2' height='1' background='/s1/form/images/point_gr.gif'></td>
  </tr>
- <tr><td colspan="3" height="8"></td></tr>
+ <tr><td colspan="2" height="8"></td></tr>
  <tr align="center">
-	 <td width="239" rowspan="2">
-      <table width="135" cellpadding="0" cellspacing="0">
-       <tr align="center">
-	    <td  class="text_1e1d"></td>
-	   </tr>
-      </table>     </td>
-   <td width="121"></td>
-   <td align='right' class='text_1b1x' width="438">
+	 <td width="549" rowspan="2">
+          <a href="/s1/form/launching.{LANGUE_PRE}.htm">{SLOGAN2}</a>   </td>
+   <td align='right' class='text_1b1x' width="449">
     <span id="span_user_info"> {WELCOME} </span>
    <select name='combo_langue_ent' onChange="change_langue(this.value); ">
     {combo_langue_ent}
           </select>    </td>
  </tr>
- <tr><td colspan='2' height="30" align="right"><a onClick="window.open('live_support.php')"> </a>  </td>
+ <tr>
+   <td height="30" align="right"> <img src='/s1/form/images/chat.gif' border='0' onClick="window.open('live_support.php')" width="10px" height="10px"> &nbsp;
+	  	  <a onClick="window.open('live_support.php')">{G_SUP_ONL} </a></td>
  </tr>
  <tr>
-   <td colspan='2'>
-<a href='ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a>
+   <td> 
+<a href='/s1/form/ouvrirh.php' class='link_1a1bt'><b>{HOME}</b></a>
 	    <p>{flag_langue_ent}</p></td>
-		<td align="right"><a onClick="stat_view()" class='link_1a1bt'>{STAT_VIEWER}</a> <br>   {N_VISIT_LA}/ {N_VISIT}=<span id="visit_info"></span>
-		 </td>
+		<td align="right"><a onClick="stat_view()" class='link_1a1bt'>{STAT_VIEWER}</a> <br>   {N_VISIT_LA}/ {N_VISIT}=<span id="visit_info"></span>		 </td>
  </tr>
- 
+  
   <tr>
-   <td colspan='3'><input name="mot" type="text" id="mot" value="{OUR_SEARCH}" style="height:22px"  size="55" onClick="veri_n_mot();"  {RIGHT_LEFT_ENTRY}>
+   <td colspan='2'><input name="mot" type="text" id="mot" value="{OUR_SEARCH}" style="height:22px"  size="55" onClick="veri_n_mot();"  {RIGHT_LEFT_ENTRY}>
      &nbsp;
 	    <input name="button" type="button" class="org_btn" onClick="f_cherche();"   value="{CHERCHER}">		</td>
 	</tr>
@@ -97,9 +94,9 @@ function init_form() {
 	  <td width="266">
 	    <table cellpadding="0" cellspacing="0" width="260">
 		<tr>
-		   <td width="10" height="10" background="images/conner_01_lt.gif"></td>
+		   <td width="10" height="10" background="/s1/form/images/conner_01_lt.gif"></td>
 		   <td width="240" bgcolor="#ffba00"></td>
-		   <td width="10" background="images/conner_01_rt.gif"></td>
+		   <td width="10" background="/s1/form/images/conner_01_rt.gif"></td>
 		</tr>
 		 <tr bgcolor="#ffba00">
 			<td></td>
@@ -113,9 +110,9 @@ function init_form() {
 	          </p>
 			  <table cellpadding="0" cellspacing="0" width="240">
 			   <tr>
-			     <td height="10" width="10" background="images/conner_02_lt.gif"></td>
+			     <td height="10" width="10" background="/s1/form/images/conner_02_lt.gif"></td>
 				 <td width="220" bgcolor="#ffdf84"></td>
-				 <td width="10" background="images/conner_02_rt.gif"></td>
+				 <td width="10" background="/s1/form/images/conner_02_rt.gif"></td>
 			   </tr>
 			   <tr bgcolor="#ffdf84">
 			    <td></td>
@@ -126,28 +123,28 @@ function init_form() {
 				</span>
 				<span class="text_1a1b">{T_TEL1}</span>: {tel1} <br>
 				&nbsp;{T_FAX}: {fax} <br>
-				<span class="text_1a1b">{T_CONTACT_NOM}</span>: {contact_nom} - {contact_prenom} ({contact_gender})<br>
+				<span class="text_1a1b">{T_CONTACT_NOM}& {T_CONTACT_PRENOM}</span>: {contact_nom} - {contact_prenom} ({contact_gender})<br>
 				&nbsp;{T_TEL2}: {tel2}<br>				</td>
 			    <td></td>
 			   </tr>
 			   <tr>
-			     <td height="10" background="images/conner_02_rb.gif"></td>
+			     <td height="10" background="/s1/form/images/conner_02_rb.gif"></td>
 				 <td bgcolor="#ffdf84"></td>
-				 <td background="images/conner_02_lb.gif"></td>
+				 <td background="/s1/form/images/conner_02_lb.gif"></td>
 			   </tr>
 			  </table>		  </td>
 			<td></td>
 		 </tr>
 		<tr>
-		   <td height="10" background="images/conner_01_lb.gif"></td>
+		   <td height="10" background="/s1/form/images/conner_01_lb.gif"></td>
 		   <td bgcolor="#ffba00"></td>
-		   <td background="images/conner_01_rb.gif"></td>
+		   <td background="/s1/form/images/conner_01_rb.gif"></td>
 		</tr>
 		</table>
 	  </td>
 
 
-	  <td width="2">	  </td>
+	  <td width="2">&nbsp;&nbsp;&nbsp;</td>
 
 	  <td width="650">
 	   <table cellpadding="0" cellspacing="0" >
@@ -168,7 +165,7 @@ function init_form() {
 		   </tr>
 		   <tr>
 		    <td width="105" align="left"></td>
-		    <td width="311"><span  onClick="mail_to()" class="link_1d1b">  <img src="images/mail_2.gif" border="0" title="{SVP_EMAIL}"  >{G_ENV_EMAIL} </span> <span id="div_chat"> </span></td>
+		    <td width="311"><span  onClick="mail_to()" class="link_1d1b">  <img src="/s1/form/images/mail_2.gif" border="0" title="{SVP_EMAIL}"  >{G_ENV_EMAIL} </span> <span id="div_chat"> </span></td>
 		    </tr>
 		 </table>	
      
@@ -185,8 +182,8 @@ function init_form() {
    </td>
    </tr>
     <tr>
-	  <td height="169"  id="info_contenu">
-   <table>
+	  <td height="169"  id="info_contenu" align="left">
+   <table align="left">
    	<tr><td>&nbsp;</td></tr>
    <tr><td height="30" colspan="2"  class="text_1e1w page_title_td" >&nbsp; {COMP_PROF}</td>
 		  </tr>
@@ -287,13 +284,14 @@ function init_form() {
   </tr>
  </tr>
 </table>
-<img src="images/bmark.gif" alt="{ADD_FAVO_COMPANIE}" title="{ADD_FAVO_COMPANIE}" onClick="add_favo_e('{photo_util_encode}')">
+<img src="/s1/form/images/bmark.gif" alt="{ADD_FAVO_COMPANIE}" title="{ADD_FAVO_COMPANIE}" onClick="add_favo_e('{photo_util_encode}')">
 </form>
  </div>
  <span id="div_introdu1" style="visibility:hidden">{introdu}</span>
   <span id="list_u"  style="visibility:hidden">non</span> 
   <span id="sp_temp"  style="visibility:hidden">non</span> 
   <span id="sp_temp2"  style="visibility:hidden">non</span> 
+  
+
 </body>
 </html>
-<!-- END: MAIN -->
